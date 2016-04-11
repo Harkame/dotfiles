@@ -1,0 +1,5 @@
+*background:#000000
+*foreground:#9535B8
+
+urxvt*transparent: true
+urxvt*shading: 30
