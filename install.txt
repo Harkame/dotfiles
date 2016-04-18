@@ -55,4 +55,14 @@ grub-install --no-floppy --recheck /dev/sda
 
 post-install
 
-pacman -S xorg steam firefox yaourt x86-
+pacman -S
+	steam
+	firefox
+	urxvt
+	i3
+	yaourt
+	eclipse -> java
+	
+yaourt -S 
+	java
+	neofetch
