@@ -30,6 +30,11 @@ nano /etc/pacman.conf
 	SigLevel = Never
 	Server = http://repo.archlinux.fr/$arch
 	
+	[blackarch]
+	SigLevel = Never
+	Server = http://blackarch.org/blackarch/$repo/os/$arch
+
+	
 locale-gen
 echo "LANG=fr_FR.UTF-8" >> /etc/locale.conf
 echo "LC_COLLATE=C" >> /etc/locale.conf
@@ -61,7 +66,8 @@ pacman -S
 	urxvt
 	i3
 	yaourt
-	eclipse -> java
+	eclipse-java
+	gksudo
 	
 yaourt -S 
 	java
