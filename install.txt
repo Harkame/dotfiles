@@ -1,6 +1,6 @@
 loadkeys fr-pc
 cfdisk /dev/sda
-		swap - 6G
+		swap - (RAM)
 		/    - ~ - bootable
 		
 mkswap /dev/sda1
