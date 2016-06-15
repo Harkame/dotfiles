@@ -1,7 +1,7 @@
 loadkeys fr-pc
 cfdisk /dev/sda
-		swap - (RAM)
-		/    - ~ - bootable
+		swap - <RAM>
+		/    - <RESTE> - bootable
 		
 mkswap /dev/sda1
 swapon /dev/sda1
@@ -10,8 +10,12 @@ mkfs.btrfs -L "Arch" -f -n 65536 /dev/sda2
 
 mount /dev/sda2 /mnt
 
-nano/etc/pacman.d/mirrorlist
-	ctrl^w Server #Server
+nano /etc/pacman.d/mirrorlist
+	ctrl^w
+	ctrl^r
+	Server -> #Server
+	
+//Sauf le premier
 
 pacstrap /mnt base base-devel networkmanager grub
 systemctl enable networkmanager.service
@@ -23,7 +27,7 @@ echo "KEYMAP=fr-latin9" >> /etc/vconsole.conf
 echo "FONT=lat9w-16" >> /etc/vconsole.conf
 
 nano /etc/locale.gen
-	fr_FR.UTF-8
+	#fr_FR.UTF-8 -> fr_FR.UTF-8
 	
 nano /etc/pacman.conf
 	[archlinuxfr]
@@ -40,7 +44,7 @@ echo "LANG=fr_FR.UTF-8" >> /etc/locale.conf
 echo "LC_COLLATE=C" >> /etc/locale.conf
 export LANG=fr_FR.UTF-8
 
-ls -sf /usr/share/zoneinfo/Europe/Paris etc/localtime
+ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 hwclock --systohc --utc
 
 echo Skadi > /etc/hostname
