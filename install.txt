@@ -47,7 +47,7 @@ export LANG=fr_FR.UTF-8
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 hwclock --systohc --utc
 
-echo Skadi > /etc/hostname
+echo "Skadi" >> /etc/hostname
 
 nano /etc/mkinitcpio.conf
 	fsck -> btrfs
