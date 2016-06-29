@@ -1,7 +1,8 @@
 loadkeys fr-pc
 cfdisk /dev/sda
-		swap - <RAM>
-		/    - <RESTE> - bootable
+	dos
+		+swap - <RAM>   - linux swap / solaris
+		+/    - <RESTE> - bootable
 		
 mkswap /dev/sda1
 swapon /dev/sda1
@@ -64,6 +65,18 @@ arch-chroot /mnt
 
 exit
 
-post-install
+reboot
 
-pacman -S xorg-server xorg-xinit xorg-xmessage xorg-utils rxvt-unicode
+useradd -m -g users -G wheel -s /bin/bash harkame
+passwd harkame
+	~
+	~
+
+pacman -S 	xorg-server
+		xorg-xinit 
+		xorg-xmessage 
+		xorg-utils 
+		rxvt-unicode 
+		i3
+		firefox
+		yaourt
