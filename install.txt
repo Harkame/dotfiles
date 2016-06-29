@@ -21,7 +21,9 @@ pacstrap /mnt base base-devel networkmanager grub
 genfstab -p -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt
+
 	systemctl enable networkmanager.service
+	
 	echo "KEYMAP=fr-latin9" >> /etc/vconsole.conf
 	echo "FONT=lat9w-16" >> /etc/vconsole.conf
 
@@ -32,16 +34,16 @@ arch-chroot /mnt
 		+[archlinuxfr]
 		+SigLevel = Never
 		+Server = http://repo.archlinux.fr/$arch
-	
+		
 		+[blackarch]
 		+SigLevel = Never
 		+Server = http://blackarch.org/blackarch/$repo/os/$arch
 
-	
-	locale-gen
 	echo "LANG=fr_FR.UTF-8" >> /etc/locale.conf
 	echo "LC_COLLATE=C" >> /etc/locale.conf
+	
 	export LANG=fr_FR.UTF-8
+	locale-gen
 
 	ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 	hwclock --systohc --utc
@@ -51,14 +53,16 @@ arch-chroot /mnt
 	nano /etc/mkinitcpio.conf
 		fsck -> btrfs
 	
+	grub-mkconfig -o /boot/grub/grub.cfg
+	grub-install --no-floppy --recheck /dev/sda
+	
+	mkinitcpio -p linux
+	
 	passwd root
 		~
 		~
 
 exit
-
-grub-mkconfig -o /boot/grub/grub.cfg
-grub-install --no-floppy --recheck /dev/sda
 
 post-install
 
