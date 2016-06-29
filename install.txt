@@ -90,4 +90,9 @@ pacman -S 	xorg-server
 		#Lib
 		vte
 		
+		feh
+		lxtask
+		sunflower
+		vlc
+		
 echo "exec i3" >> .xinitrc
