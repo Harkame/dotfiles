@@ -65,12 +65,14 @@ arch-chroot /mnt
 
 exit
 
-reboot
-
 useradd -m -g users -G wheel -s /bin/bash harkame
 passwd harkame
 	~
 	~
+
+umount -R /mnt
+
+reboot
 
 pacman -S 	xorg-server
 		xorg-xinit 
@@ -79,4 +81,8 @@ pacman -S 	xorg-server
 		rxvt-unicode 
 		i3
 		firefox
+		gksudo
 		yaourt
+		git
+		
+echo "exec i3" >> .xinitrc
