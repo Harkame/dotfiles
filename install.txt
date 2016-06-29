@@ -79,10 +79,15 @@ pacman -S 	xorg-server
 		xorg-xmessage 
 		xorg-utils 
 		rxvt-unicode 
+		
+		#Graphic
 		i3
+		#Navigateurs
 		firefox
 		gksudo
 		yaourt
 		git
+		#Lib
+		vte
 		
 echo "exec i3" >> .xinitrc
