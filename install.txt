@@ -105,6 +105,7 @@ yaourt -S
 		gksudo
 	#ide
 		eclipse
+			2) jdk-8
 	#Archivage
 		zip
 		unzip
