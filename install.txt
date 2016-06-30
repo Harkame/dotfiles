@@ -74,25 +74,39 @@ umount -R /mnt
 
 reboot
 
-pacman -S 	xorg-server
+pacman -S 
+	#Gestionnaire - Paquet
+		yaourt
+yaourt -S
+	#Systeme
+		xorg-server
 		xorg-xinit 
 		xorg-xmessage 
 		xorg-utils 
+	#Terminal
 		rxvt-unicode 
-		
-		#Graphic
-		i3
-		#Navigateurs
+	#Graphic
+		i3		
+	#Navigateurs
 		firefox
-		gksudo
-		yaourt
+	#Gestionnaire - Version
 		git
-		#Lib
-		vte
-		
-		feh
-		lxtask
+	#Gestionnaire - Fichiers
 		sunflower
+	#Gestionnaire - Taches
+		lxtask
+	#Lib
+		vte
+	#Lecteur - Video
 		vlc
+	#Wallpaper
+		feh
+	#Autre	
+		gksudo
+	#ide
+		eclipse
+	#Archivage
+		zip
+		unzip
 		
 echo "exec i3" >> .xinitrc
