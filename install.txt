@@ -109,5 +109,10 @@ yaourt -S
 	#Archivage
 		zip
 		unzip
+	#Editeur
+		sublime-texte
 		
 echo "exec i3" >> .xinitrc
+
+nano /etc/sudoers
+	+harkame ALL=(ALL) ALL
