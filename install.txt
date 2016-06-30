@@ -62,13 +62,13 @@ arch-chroot /mnt
 	passwd root
 		~
 		~
+		
+	useradd -m -g users -G wheel -s /bin/bash harkame
+	passwd harkame
+		~
+		~
 
 exit
-
-useradd -m -g users -G wheel -s /bin/bash harkame
-passwd harkame
-	~
-	~
 
 umount -R /mnt
 
