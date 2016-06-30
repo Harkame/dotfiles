@@ -23,7 +23,7 @@ genfstab -p -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt
 
-	systemctl enable networkmanager.service
+	systemctl enable NetworkManager.service
 	
 	echo "KEYMAP=fr-latin9" >> /etc/vconsole.conf
 	echo "FONT=lat9w-16" >> /etc/vconsole.conf
