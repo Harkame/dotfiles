@@ -112,6 +112,8 @@ yaourt -S
 		unzip
 	#Editeur
 		sublime-texte
+	#Vpn
+		tor
 		
 echo "exec i3" >> .xinitrc
 
