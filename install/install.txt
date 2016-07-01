@@ -83,6 +83,7 @@ yaourt -S
 		xorg-xinit 
 		xorg-xmessage 
 		xorg-utils 
+		xorg-xrandr
 	#Terminal
 		rxvt-unicode 
 	#Graphic
@@ -119,3 +120,14 @@ echo "exec i3" >> .xinitrc
 
 nano /etc/sudoers
 	+harkame ALL=(ALL) ALL
+	
+cvt 1920 1080
+	"1920x1080_60.00" ... +vsync
+
+xrandr --newmode "1920x1080_60.00" ... +vsync
+
+xrandr
+	$nom_ecran
+	
+xrandr --addmode $nom_ecran 1920x1080_60.00
+xrandr --output $nom_ecran --mode 1920x1080_60.00
