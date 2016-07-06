@@ -112,7 +112,7 @@ yaourt -S
 		zip
 		unzip
 	#Editeur
-		sublime-texte
+		sublime-text
 	#Vpn
 		tor
 		
