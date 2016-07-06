@@ -89,7 +89,8 @@ yaourt -S
 	#Graphic
 		i3		
 	#Navigateurs
-		firefox
+		firefox-i18n-fr 
+		flashplugin
 	#Gestionnaire - Version
 		git
 	#Gestionnaire - Fichiers
