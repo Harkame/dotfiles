@@ -107,7 +107,7 @@ yaourt -S
 		gksu
 		neofetch
 	#ide
-		eclipse
+		eclipse-common
 			2) jdk-8
 	#Archivage
 		zip
