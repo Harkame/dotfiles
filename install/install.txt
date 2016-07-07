@@ -105,6 +105,8 @@ yaourt -S
 		feh
 	#Autre	
 		gksu
+		
+		rtmpdump
 		neofetch
 	#ide
 		eclipse-java
