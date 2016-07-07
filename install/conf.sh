@@ -1,8 +1,8 @@
 #!/bin/bash
 
 mkdir -p /home/harkame/.config/i3
-mv ../.config/i3/config /home/$USER/.config/i3/
+mv -f ../.config/i3/config /home/$USER/.config/i3/
 
-mv ../.Xdefaults /home/$USER/
+mv -f ../.Xdefaults /home/$USER/
 
-mv ../etc/pacman.conf /etc/
+mv -f ../etc/pacman.conf /etc/
