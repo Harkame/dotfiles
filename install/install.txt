@@ -117,8 +117,9 @@ yaourt -S
 	#Editeur
 		sublime-text
 	#Vpn
-		tor
-		
+	tor
+	#Cloud
+		megasync
 echo "exec i3" >> .xinitrc
 
 nano /etc/sudoers
