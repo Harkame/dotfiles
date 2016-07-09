@@ -137,6 +137,14 @@ cvt 1920 1080
 	"1920x1080_60.00" ... +vsync
 xrandr --newmode "1920x1080_60.00" ... +vsync
 xrandr
-	$nom_ecran
-xrandr --addmode $nom_ecran 1920x1080_60.00
-xrandr --output $nom_ecran --mode 1920x1080_60.00
+	<nom_ecran>
+xrandr --addmode <nom_ecran> 1920x1080_60.00
+xrandr --output <nom_ecran> --mode 1920x1080_60.00
+
+git config --global color.diff auto
+git config --global color.status auto
+git config --global color.branch auto
+git config --global user.name Harkame
+git config --global user.email louisr.daviaud@gmail.com
+
+
