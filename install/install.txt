@@ -122,6 +122,9 @@ yaourt -S
 		megasync
 	#Biblio
 		calibre
+	#Son
+		alsa-utils
+		
 echo "exec i3" >> .xinitrc
 
 nano /etc/sudoers
@@ -129,11 +132,8 @@ nano /etc/sudoers
 	
 cvt 1920 1080
 	"1920x1080_60.00" ... +vsync
-
 xrandr --newmode "1920x1080_60.00" ... +vsync
-
 xrandr
 	$nom_ecran
-	
 xrandr --addmode $nom_ecran 1920x1080_60.00
 xrandr --output $nom_ecran --mode 1920x1080_60.00
