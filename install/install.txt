@@ -89,7 +89,9 @@ yaourt -S
 	#Graphic
 		i3		
 	#Navigateurs
-		firefox-i18n-fr 
+		firefox-i18n-fr
+		vivaldi
+		chromium
 		flashplugin
 	#Gestionnaire - Version
 		git
@@ -99,6 +101,7 @@ yaourt -S
 		lxtask
 	#Lib
 		vte
+		ntgss-3g
 	#Lecteur - Video
 		vlc
 	#Wallpaper
