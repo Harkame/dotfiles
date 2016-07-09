@@ -105,7 +105,7 @@ yaourt -S
 		feh
 	#Autre	
 		gksu
-		
+		wine
 		rtmpdump
 		neofetch
 	#ide
