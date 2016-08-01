@@ -117,8 +117,11 @@ yaourt -S
 	#Archivage
 		zip
 		unzip
-	#Editeur
+		rar
+		P7zip
+	#Editeur de texte
 		sublime-text
+		atom-editor-arch
 	#Vpn
 		tor
 	#Cloud
@@ -127,6 +130,7 @@ yaourt -S
 		calibre
 	#Son
 		alsa-utils
+	
 		
 echo "exec i3" >> .xinitrc
 
