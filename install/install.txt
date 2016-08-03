@@ -87,7 +87,8 @@ yaourt -S
 	#Terminal
 		rxvt-unicode 
 	#Graphic
-		i3		
+		i3
+		i3-gaps
 	#Navigateurs
 		firefox-i18n-fr
 		vivaldi
