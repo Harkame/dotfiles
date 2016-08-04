@@ -1,5 +1,33 @@
-*background:#000000
-*foreground:#9535B8
+! Pas de barre de défilement
+URxvt*scrollBar: False
+
+! font
+URxvt.font:     xft:bitstream vera sans mono:size=12:antialias=true
+URxvt.boldFont: xft:bitstream vera sans mono:bold:size=12:antialias=true
+
+! Couleur d'arrière plan noir
+URxvt*background: #000000
+
+! Couleur d'avant plan blanc
+URxvt*foreground: #19BB16
+
+! Lien cliquable
+! Valeur possible pour l'option matcher button: 1=clic gauche, 2= clic milieu, 3=clic droit
+URxvt.perl-ext-common:  default,matcher
+URxvt.urlLauncher:      firefox
+URxvt.matcher.button:   1
+
+! Prise en charge des onglets
+! shift+bas ou clic sur NEW= ouvrir nouvel onglet, 
+! shift + fleche gauche/droite=navigation dans les onglets. 
+! ctrl + fleche gauche/droite= deplacement onglet
+! ctrl+d ou taper exit = fermer onglet/terminal
+URxvt.perl-ext-common:  default,tabbed
 
 urxvt*transparent: true
 urxvt*shading: 30
+
+URxvt.tabbed.tabbar-fg: 3
+URxvt.tabbed.tabbar-bg: #000000
+URxvt.tabbed.tab-fg:    1
+URxvt.tabbed.tab-bg:    2
