@@ -1,7 +1,6 @@
-font pango:monospace 8
+#xmodmap
 
-# start a terminal
-bindsym control+t exec urxvtc
+font pango:monospace 8
 
 # kill focused window
 bindsym control+q kill
@@ -12,16 +11,16 @@ bindsym control+Down focus down
 bindsym control+Up focus up
 bindsym control+Right focus right
 
-# move focused window
+# move on screen
 bindsym control+shift+Left move left
 bindsym control+shift+Down move down
 bindsym control+shift+Up move up
 bindsym control+shift+Right move right
 
-# enter fullscreen mode for the focused container
+# fullscreen
 bindsym control+shift+f fullscreen toggle
 
-# switch to workspace
+# switch workspace
 bindsym control+1 workspace 1
 bindsym control+2 workspace 2
 bindsym control+3 workspace 3
@@ -33,7 +32,7 @@ bindsym control+8 workspace 8
 bindsym control+9 workspace 9
 bindsym control+0 workspace 10
 
-# move focused container to workspace
+# move to workspace
 bindsym control+shift+1 move container to workspace 1
 bindsym control+shift+2 move container to workspace 2
 bindsym control+shift+3 move container to workspace 3
@@ -51,30 +50,88 @@ bindsym control+shift+r restart
 bindsym control+shift+p exec "i3-nagbar -t warning -m 'Quitter ?' -b 'Oui' 'i3-msg exit'"
 
 bar {
-    status_command i3status
+	status_command    i3status
+	position          bottom
+	#workspace_buttons yes
+	#tray_output       none
+    	#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+	#i3bar_command i3bar -t
+	colors {
+		background #000000
+		statusline #ffffff
+		separator #757575
+		focused_workspace #ffffff #285577
+        	focused_workspace  #ffffff #000000
+        	active_workspace   #ffffff #000000
+        	inactive_workspace #888888 #222222
+        	urgent_workspace   #ffffff #900000
+	}
 }
 
-# start
-exec urxvtd -q -o -f
-exec urxvtc
-exec setxkbmap fr
-exec systemctl restard dhcpcd
-exec feh --bg-scale /home/harkame/Downloads/fear.png
+# Focus souris
+focus_follows_mouse no
 
-# firefox
-bindsym control+shift+n  exec firefox
+# Workspace precedent
+workspace_auto_back_and_forth yes
 
-# steam
-bindsym control+shift+s exec steam
+# Bordure des nouvelles fenêtres (normal | none | 1pixel | pixel n)
+# fenêtres normales:
+new_window none
 
-# vlc
-bindsym control+shift+l exec vlc
+# fenêtres flottantes:
+new_float normal
+# Assignation des logiciels à un espace:
+assign [class="atom"] 1
+assign [class="firefox"] 2
 
-# idm
-bindsym control+shift+i exec urxvt -hold -e wine /home/harkame/.wine/drive_c/*86*/Inter*/IDMan.exe
+# Modification des couleurs de la fenêtre ayant le focus:
+# class	       	   bordure	fond	texte	indicateur
+client.focused	   #FF00FF	#111111	#00FF00	#FF00FF
+
+# terminal
+bindsym control+t exec urxvtc
+
+# navigateur
+bindsym mod4+n  exec firefox
+
+# video
+bindsym mod4+l exec vlc
+
+# Editeur de texte
+bindsym mod4+a exec atom
 
 # gestionnaire - fichier
-bindsym control+shift+e exec pcmanfm
+bindsym mod4+f exec sunflower
 
-# gestionnaire - tâches
-bindsym control+shift+t exec lxtask
+# gestionnaire - taches
+bindsym mod4+t exec lxtask
+
+# ide
+bindsym mod4+i exec eclipse
+
+###########
+#  START  #
+###########
+
+# Resolution
+exec xrandr --newmode "1920x1080_59.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync; xrandr --addmode Virtual-1 1920x1080_59.00; xrandr --output Virtual-1 --mode 1920x1080_59.00;
+
+# Wallpapers
+exec sh -c 'sleep 0.3'; feh --bg-scale '/home/harkame/Wallpapers/skadi.jpg'
+
+# Terminal en mode Demon
+exec sh -c 'sleep 0.4'; urxvtd -q -o -f
+exec sh -c 'sleep 0.4'; urxvtd -q -o -f
+exec sh -c 'sleep 0.4'; urxvtd -q -o -f
+
+# Terminal
+exec exec sh -c 'sleep 0.5'; urxvtc
+
+for_window [class="^.*"] border pixel 1
+
+
+gaps inner 5
+gaps outer 5
+smart_gaps on
+smart_borders on
+
