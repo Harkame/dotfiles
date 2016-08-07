@@ -132,6 +132,8 @@ yaourt -S
 		calibre
 	#Son
 		alsa-utils
+	#Compilation
+		gnu-cobol
 	
 		
 echo "exec i3" >> .xinitrc
