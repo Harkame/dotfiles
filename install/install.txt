@@ -112,6 +112,7 @@ yaourt -S
 		wine
 		rtmpdump
 		neofetch
+		playonlinux
 	#ide
 		eclipse-java
 			2) jdk-8
