@@ -136,6 +136,8 @@ yaourt -S
 		gnu-cobol
 	#Interpreteur
 		zsh
+	#Song
+		gpmdp-remote
 	
 		
 echo "exec i3" >> .xinitrc
