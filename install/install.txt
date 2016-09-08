@@ -89,6 +89,7 @@ yaourt -S
 	#Graphic
 		i3
 		i3-gaps
+		i3blocks
 	#Navigateurs
 		firefox-i18n-fr
 		vivaldi
