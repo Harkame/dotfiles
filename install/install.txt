@@ -139,7 +139,8 @@ yaourt -S
 		zsh
 	#Song
 		gpmdp-remote
-	
+	#Debug
+		gdb
 		
 echo "exec i3" >> .xinitrc
 
