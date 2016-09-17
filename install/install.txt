@@ -141,6 +141,8 @@ yaourt -S
 		gpmdp-remote
 	#Debug
 		gdb
+	#Torrent
+		transmission-cli
 		
 echo "exec i3" >> .xinitrc
 
