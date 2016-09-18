@@ -147,6 +147,7 @@ yaourt -S
 		qbittorrent
 	#Partitions
 		gparted
+		btrfs-progs
 		
 echo "exec i3" >> .xinitrc
 
