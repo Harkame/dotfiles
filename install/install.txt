@@ -144,6 +144,9 @@ yaourt -S
 		gdb
 	#Torrent
 		transmission-cli
+		qbittorrent
+	#Partitions
+		gparted
 		
 echo "exec i3" >> .xinitrc
 
