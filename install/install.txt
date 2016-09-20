@@ -107,6 +107,7 @@ yaourt -S
 		boost-libs
 	#Lecteur - Video
 		vlc
+		mplayer
 	#Wallpaper
 		feh
 	#Autre	
