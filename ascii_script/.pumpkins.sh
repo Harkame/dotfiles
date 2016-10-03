@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo ""
+echo -e "       \e[5m\e[31maaa                                     \e[5m\e[32maaa			"
+echo -e "     \e[31maaaaaaa                 aaaa            \e[32maaaaaaa                 aaaa		"
+echo -e "      \e[31maaaaaaa             aaaaaaa            \e[32m aaaaaaa             aaaaaaa          "
+echo -e "        \e[31maaaaa           aaaaaaaa             \e[32m   aaaaa           aaaaaaaa		"
+echo -e " \e[31ma        aa           aaaaaaa       a             \e[32maa           aaaaaaa       a	"
+echo -e " \e[31ma                                   a    \e[32ma                                   a	"
+echo -e " \e[31maaa                                aa    \e[32maaa                                aa	"
+echo -e "  \e[31maaa      aa    a                aaa      \e[32maaa      aa    a                aaa	"
+echo -e "   \e[31maaaa  aaaa   aaa      aa      aa         \e[32maaaa  aaaa   aaa      aa      aa	"
+echo -e "    \e[31maaaaaaaaaaaaaaaaa   aaaa   aaaa          \e[32maaaaaaaaaaaaaaaaa   aaaa   aaaa	"
+echo -e "      \e[31maaaa   aaaaa  aaaaaaaaaa aaa             \e[32maaaa   aaaaa  aaaaaaaaaa aaa	"
+echo -e "              \e[31maaa    aaaa   aaaa                       \e[32maaa    aaaa   aaaa		"
+echo -e "\033[0m"
