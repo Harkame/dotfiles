@@ -150,6 +150,7 @@ yaourt -S
 	#Partitions
 		gparted
 		btrfs-progs
+		oh-my-zsh 
 		
 echo "exec i3" >> .xinitrc
 
