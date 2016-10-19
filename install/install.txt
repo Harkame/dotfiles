@@ -150,8 +150,10 @@ yaourt -S
 	#Partitions
 		gparted
 		btrfs-progs
+	#Autre
 		oh-my-zsh 
-		
+		wireshark-cli
+		cutegram-git
 echo "exec i3" >> .xinitrc
 
 nano /etc/sudoers
