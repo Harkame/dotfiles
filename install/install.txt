@@ -103,7 +103,7 @@ yaourt -S
 		lxtask
 	#Lib
 		vte
-		ntgss-3g
+		ntfs-3g
 		boost-libs
 	#Lecteur - Video
 		vlc
