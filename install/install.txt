@@ -116,6 +116,7 @@ yaourt -S
 		rtmpdump
 		neofetch
 		playonlinux
+		lxappearance
 	#ide
 		eclipse-java
 			2) jdk-8
