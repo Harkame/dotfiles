@@ -154,6 +154,8 @@ yaourt -S
 		oh-my-zsh 
 		wireshark-cli
 		cutegram-git
+		discorde
+		
 echo "exec i3" >> .xinitrc
 
 nano /etc/sudoers
