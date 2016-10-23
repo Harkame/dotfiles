@@ -155,6 +155,7 @@ yaourt -S
 		wireshark-cli
 		cutegram-git
 		discorde
+                telegram-cli-git
 		
 echo "exec i3" >> .xinitrc
 
