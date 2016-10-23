@@ -156,6 +156,7 @@ yaourt -S
 		cutegram-git
 		discorde
                 telegram-cli-git
+		telegram-desktop
 		
 echo "exec i3" >> .xinitrc
 
