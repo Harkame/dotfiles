@@ -157,6 +157,7 @@ yaourt -S
 		discorde
                 telegram-cli-git
 		telegram-desktop
+		texlive-core
 		
 echo "exec i3" >> .xinitrc
 
