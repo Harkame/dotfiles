@@ -127,7 +127,7 @@ yaourt -S
 		P7zip
 	#Editeur de texte
 		sublime-text
-		atom-editor-arch
+		atom-editor-git
 	#Vpn
 		tor
 	#Cloud
@@ -151,7 +151,7 @@ yaourt -S
 		gparted
 		btrfs-progs
 	#Autre
-		oh-my-zsh 
+		oh-my-zsh-git
 		wireshark-cli
 		cutegram-git
 		discorde
