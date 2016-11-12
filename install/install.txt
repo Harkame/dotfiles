@@ -127,7 +127,7 @@ yaourt -S
 		P7zip
 	#Editeur de texte
 		sublime-text
-		atom-editor-git
+		atom
 	#Vpn
 		tor
 	#Cloud
