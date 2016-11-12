@@ -158,6 +158,9 @@ yaourt -S
                 telegram-cli-git
 		telegram-desktop
 		texlive-core
+	#ide
+		intellij-idea-ultimate-edition
+		clion
 		
 echo "exec i3" >> .xinitrc
 
