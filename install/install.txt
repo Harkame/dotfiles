@@ -105,6 +105,7 @@ yaourt -S
 		vte
 		ntfs-3g
 		boost-libs
+		lib32-libldap
 	#Lecteur - Video
 		vlc
 		mplayer
