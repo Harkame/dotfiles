@@ -159,6 +159,7 @@ yaourt -S
                 telegram-cli-git
 		telegram-desktop
 		texlive-core
+		lm_sensors
 	#ide
 		intellij-idea-ultimate-edition
 		clion
