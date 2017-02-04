@@ -185,5 +185,5 @@ git config --global user.email louisr.daviaud@gmail.com
  
 chsh -s /bin/zsh
 
-
+hwclock --hctosys
 
