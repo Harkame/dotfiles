@@ -152,7 +152,7 @@ yaourt -S
 		gparted
 		btrfs-progs
 	#Autre
-		oh-my-zsh-git
+		oh-my-zh-git
 		wireshark-cli
 		cutegram-git
 		discorde
