@@ -1,9 +1,9 @@
 ! Pas de barre de défilement
-URxvt*scrollBar: False
+URxvt*scrollBar: true
 
 ! font
-URxvt.font:     xft:bitstream vera sans mono:size=12:antialias=true
-URxvt.boldFont: xft:bitstream vera sans mono:bold:size=12:antialias=true
+URxvt.font:xft:Monospace:pixelsize=15
+URxvt.boldfont:xft:Monospace-Bold:pixelsize=15
 
 ! Couleur d'arrière plan noir
 URxvt*background: #000000
@@ -18,16 +18,16 @@ URxvt.urlLauncher:      firefox
 URxvt.matcher.button:   1
 
 ! Prise en charge des onglets
-! shift+bas ou clic sur NEW= ouvrir nouvel onglet, 
-! shift + fleche gauche/droite=navigation dans les onglets. 
+! shift+bas ou clic sur NEW= ouvrir nouvel onglet,
+! shift + fleche gauche/droite=navigation dans les onglets.
 ! ctrl + fleche gauche/droite= deplacement onglet
 ! ctrl+d ou taper exit = fermer onglet/terminal
-URxvt.perl-ext-common:  default,tabbed
+#URxvt.perl-ext-common:  default,tabbed
 
 urxvt*transparent: true
 urxvt*shading: 30
 
-URxvt.tabbed.tabbar-fg: 3
-URxvt.tabbed.tabbar-bg: #000000
-URxvt.tabbed.tab-fg:    1
-URxvt.tabbed.tab-bg:    2
+#URxvt.tabbed.tabbar-fg: 3
+#URxvt.tabbed.tabbar-bg: #000000
+#URxvt.tabbed.tab-fg:    1
+#URxvt.tabbed.tab-bg:    2

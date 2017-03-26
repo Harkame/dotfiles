@@ -17,14 +17,13 @@ export LANG=C
 printinfo () {
     info title
     info underline
-
-    info "OS     " distro
+info "OS     " distro
     info "Kernel " kernel
     info "Uptime " uptime
     info "Shell  " shell
     info linebreak
     info "CPU    " cpu
-    info "GPU    " gpu     
+    info "GPU    " gpu
     info "Res    " resolution
     info linebreak
     info "CPU    " cpu_usage

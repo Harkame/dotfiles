@@ -1,10 +1,10 @@
 !#/bin/bash
 
-# Mappage fr
+#Mappage fr
 setxkbmap fr
 
-# Reseau
+#Reseau
 #systemctl restart dhpcpd
 
-# WM
+#WM
 exec i3
