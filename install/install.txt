@@ -75,95 +75,91 @@ umount -R /mnt
 reboot
 
 pacman -S 
-	#Gestionnaire - Paquet
-		yaourt
+	yaourt
+	
 yaourt -S
-	#Systeme
-		xorg-server
-		xorg-xinit 
-		xorg-xmessage 
-		xorg-utils 
-		xorg-xrandr
-	#Terminal
-		rxvt-unicode 
-	#Graphic
-		i3
-		i3-gaps
-		i3blocks
-	#Navigateurs
-		firefox-i18n-fr
-		vivaldi
-		chromium
-		flashplugin
-	#Gestionnaire - Version
-		git
-	#Gestionnaire - Fichiers
-		sunflower
-	#Gestionnaire - Taches
-		lxtask
-	#Lib
-		vte
-		ntfs-3g
-		boost-libs
-		lib32-libldap
-	#Lecteur - Video
-		vlc
-		mplayer
-	#Wallpaper
-		feh
-	#Autre	
-		gksu
-		wine
-		rtmpdump
-		neofetch
-		playonlinux
-		lxappearance
-	#ide
-		eclipse-java
-			2) jdk-8
-	#Archivage
-		zip
-		unzip
-		rar
-		P7zip
-	#Editeur de texte
-		sublime-text
-		atom
-	#Vpn
-		tor
-	#Cloud
-		megasync
-	#Biblio
-		calibre
-	#Son
-		alsa-utils
-	#Compilation
-		gnu-cobol
-	#Interpreteur
-		zsh
-	#Song
-		gpmdp-remote
-	#Debug
-		gdb
-	#Torrent
-		transmission-cli
-		qbittorrent
-	#Partitions
-		gparted
-		btrfs-progs
-	#Autre
-		oh-my-zh-git
-		wireshark-cli
-		cutegram-git
-		discorde
-                telegram-cli-git
-		telegram-desktop
-		texlive-core
-		lm_sensors
-		ttf-ms-fonts
-	#ide
-		intellij-idea-ultimate-edition
-		clion
+	xorg-server
+	xorg-xinit 
+	xorg-xmessage 
+	xorg-utils 
+	xorg-xrandr
+
+	rxvt-unicode 
+
+	i3
+	i3-gaps
+	i3blocks
+
+	firefox-i18n-fr
+	flashplugin
+
+	git
+
+	sunflower
+
+	lxtask
+
+	vte
+	ntfs-3g
+	boost-libs
+	lib32-libldap
+
+	vlc
+	mplayer
+
+	feh
+
+	gksu
+	wine
+	rtmpdump
+	neofetch
+	playonlinux
+	lxappearance
+
+	eclipse-java
+		2) jdk-8
+
+	zip
+	unzip
+	rar
+	P7zip
+
+	atom
+
+	tor
+
+	megasync
+
+	calibre
+
+	alsa-utils
+
+	gnu-cobol
+
+	zsh
+
+	gpmdp-remote
+
+	gdb
+
+	transmission-cli
+	qbittorrent
+
+	gparted
+	btrfs-progs
+
+	oh-my-zh-git
+	wireshark-cli
+	cutegram-git
+	discorde
+	telegram-cli-git
+	telegram-desktop
+	texlive-core
+	lm_sensors
+	ttf-ms-fonts
+
+	intellij-idea-ultimate-edition
+	clion
 		
 echo "exec i3" >> .xinitrc
 
