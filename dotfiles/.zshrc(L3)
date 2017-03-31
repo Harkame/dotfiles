@@ -1,0 +1,28 @@
+[ -n "$XTERM_VERSION" ] && transset -a >/dev/null
+[ -n "$FIREFOX_VERSION" ] && transset -a >/dev/null
+
+alias ls="echo ''; ls; echo";
+alias atom="/auto_home/ldaviaud/Téléchargements/usr/share/atom/atom"
+alias w="cd /auto_home/ldaviaud/workspace"
+alias ac="cd /auto_home/ldaviaud/workspace/Archive_Cracker"
+alias c="echo -e '\\033c'";
+alias ml="cd /auto_home/ldaviaud/workspace/MyLib/src/"
+alias neofetch="/auto_home/ldaviaud/workspace/neofetch/neofetch --memory_display infobar --disk_display infobar --ascii /auto_home/ldaviaud/workspace/neofetch/ascii/distro/arch"
+alias rekt="shutdown 0";
+alias res="clear; zsh"
+alias xterm="xterm -maximized | transset -a > /dev/null;"
+alias pharo="/auto_home/ldaviaud/Téléchargements/smalltalk/pharo5.0/pharo"
+echo;
+
+/auto_home/ldaviaud/Bureau/neofetch.sh;
+
+/auto_home/ldaviaud/toto.sh;
+
+PROMPT=$'%{\e[0;5m%}%B┌─%b%{\e[1;32m%}[%n%{\e[1;31m%}@%{\e[32m%}%{\e[0;32m%}%m]%{\e[0;36m%}%B%b%{\e[5m%} - %b%{\e[0;36m%}%B%b%{\e[1;33m%}[%~]%b%{\e[5m%} - %{\e[0;36m%}%B%b%{\e[0;35m%}['%D{"%I:%M:%S"}]%b$'%{\e[0;32
+m%}%B%b%{\e[99m%}
+%{\e[0;5m%}%B└─>%{\e[99m%}%b '
+PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
+ls;
+echo "";
+date;
+echo "";
