@@ -158,8 +158,7 @@ yaourt -S
 	lm_sensors
 	ttf-ms-fonts
 
-	intellij-idea-ultimate-edition
-	clion
+	speedtest-cli
 		
 echo "exec i3" >> .xinitrc
 
