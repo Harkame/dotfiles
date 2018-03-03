@@ -24,7 +24,7 @@ mount /dev/sda2 /mnt
 sed -i "s/Server/#Server/g" /etc/pacman.d/mirrorlist
 #uncomment the choosen one>
 
-pacstrap /mnt base base-devel networkmanager grub
+pacstrap /mnt base base-devel networkmanager grub btrfs-progs
 genfstab -p -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt
@@ -34,8 +34,7 @@ arch-chroot /mnt
 	echo "KEYMAP=fr-latin9" >> /etc/vconsole.conf
 	echo "FONT=lat9w-16" >> /etc/vconsole.conf
 
-	nano /etc/locale.gen
-		#fr_FR.UTF-8 -> fr_FR.UTF-8
+	sed -i "s/#fr_FR.UTF-8/fr_FR.UTF-8/g" /etc/locale.gen"
 
 	nano /etc/pacman.conf
 		+[archlinuxfr]
@@ -45,6 +44,8 @@ arch-chroot /mnt
 		+[blackarch]
 		+SigLevel = Never
 		+Server = http://blackarch.org/blackarch/$repo/os/$arch
+		
+	pacman -Sy
 
 	echo "LANG=fr_FR.UTF-8" >> /etc/locale.conf
 	echo "LC_COLLATE=C" >> /etc/locale.conf
@@ -57,9 +58,6 @@ arch-chroot /mnt
 
 	echo "Skadi" >> /etc/hostname
 
-	nano /etc/mkinitcpio.conf
-		fsck -> btrfs
-	
 	grub-mkconfig -o /boot/grub/grub.cfg
 	grub-install --no-floppy --recheck /dev/sda
 	
