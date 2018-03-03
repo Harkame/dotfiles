@@ -115,7 +115,7 @@ bindsym mod4+i exec gksudo eclipse
 ###########
 
 #Resolution
-#exec xrandr --newmode "1920x1080_59.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync; xrandr --addmode Virtual-1 1920x1080_59.00; xrandr --output Virtual-1 --mode 1920x1080_59.00;
+exec xrandr --newmode "1920x1080_59.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync; xrandr --addmode Virtual-1 1920x1080_59.00; xrandr --output Virtual-1 --mode 1920x1080_59.00;
 
 #Wallpaper
 exec sh -c 'sleep 0.3'; feh --bg-scale '/home/harkame/Wallpapers/wallpaper.png'
