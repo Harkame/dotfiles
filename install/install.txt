@@ -1,4 +1,14 @@
 loadkeys fr
+
+fdisk /dev/sda
+	n
+	[enter]
+	[enter]
+	[enter]
+	
+	a
+	w
+
 cfdisk /dev/sda
 	dos
 		+swap - <RAM>   - linux swap / solaris
@@ -11,12 +21,8 @@ mkfs.btrfs -L "Arch" -f -n 65536 /dev/sda2
 
 mount /dev/sda2 /mnt
 
-nano /etc/pacman.d/mirrorlist
-	ctrl^w
-	ctrl^r
-	Server -> #Server
-	
-//Sauf le premier
+sed -i "s/Server/#Server/g" /etc/pacman.d/mirrorlist
+#uncomment the choosen one>
 
 pacstrap /mnt base base-devel networkmanager grub
 genfstab -p -U /mnt >> /mnt/etc/fstab
