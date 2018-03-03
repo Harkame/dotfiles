@@ -1,4 +1,4 @@
-loadkeys fr-pc
+loadkeys fr
 cfdisk /dev/sda
 	dos
 		+swap - <RAM>   - linux swap / solaris
