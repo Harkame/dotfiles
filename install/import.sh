@@ -10,4 +10,4 @@ cp -f /home/$USER/.bashrc ../dotfiles/.bashrc;
 
 cp -f /etc/pacman.conf ../dotfiles/etc/pacman.conf;
 
-find ../dotfiles/ -type f -print0 | xargs 0 sed -r "/s/USER/$USER/g"
+#find ../dotfiles/ -type f -print0 | xargs 0 sed -r "/s/USER/$USER/g"

@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-find ../dotfiles/ -type f -print0 | xargs 0 sed -r "/s/$USER/USER/g"
+#find ../dotfiles/ -type f -print0 | xargs 0 sed -r "/s/$USER/USER/g"
 
 cp -r -f ../dotfiles/.config /home/$USER/.config;
 

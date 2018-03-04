@@ -1,0 +1,595 @@
+{
+   "checksum": "f82e4136f8ba9e9da63281fc8c47104a",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "children": [ {
+               "date_added": "13164656381368125",
+               "id": "7",
+               "meta_info": {
+                  "Thumbnail": "/resources/sd_vivaldi.png"
+               },
+               "name": "Vivaldi",
+               "type": "url",
+               "url": "https://vivaldi.com/"
+            }, {
+               "date_added": "13164656381373279",
+               "id": "8",
+               "meta_info": {
+                  "Thumbnail": "/resources/sd_vivaldi_community.gif"
+               },
+               "name": "Communauté Vivaldi",
+               "type": "url",
+               "url": "https://vivaldi.net/fr/"
+            }, {
+               "date_added": "13164656381373917",
+               "id": "9",
+               "meta_info": {
+                  "Description": "travel, airfare",
+                  "Thumbnail": "/resources/sd_booking.com.png"
+               },
+               "name": "Booking.com",
+               "type": "url",
+               "url": "https://vivaldi.com/bk/bookingcom-fr"
+            }, {
+               "date_added": "13164656381374668",
+               "id": "10",
+               "meta_info": {
+                  "Description": "shopping",
+                  "Thumbnail": "/resources/sd_ebay.png"
+               },
+               "name": "eBay",
+               "type": "url",
+               "url": "https://vivaldi.com/bk/ebay-fr"
+            }, {
+               "date_added": "13164656381376865",
+               "id": "11",
+               "meta_info": {
+                  "Description": "shopping, electronics",
+                  "Thumbnail": "/resources/sd_amazon.png"
+               },
+               "name": "Amazon",
+               "type": "url",
+               "url": "https://vivaldi.com/bk/amazon"
+            }, {
+               "date_added": "13164656381385601",
+               "id": "12",
+               "meta_info": {
+                  "Description": "commerce",
+                  "Thumbnail": "/resources/sd_aliexpress.png"
+               },
+               "name": "AliExpress",
+               "type": "url",
+               "url": "https://vivaldi.com/bk/aliexpresscom-fr"
+            }, {
+               "date_added": "13164656381387046",
+               "id": "13",
+               "meta_info": {
+                  "Description": "travel",
+                  "Thumbnail": "/resources/sd_expedia.png"
+               },
+               "name": "Expedia",
+               "type": "url",
+               "url": "https://vivaldi.com/bk/expedia"
+            }, {
+               "date_added": "13164656381390562",
+               "id": "14",
+               "meta_info": {
+                  "Description": "travel, airfare, lodging",
+                  "Thumbnail": "/resources/sd_tripadvisor.png"
+               },
+               "name": "TripAdvisor",
+               "type": "url",
+               "url": "https://vivaldi.com/bk/tripadvisor-world"
+            }, {
+               "date_added": "13164656381393871",
+               "id": "15",
+               "meta_info": {
+                  "Description": "travel, airfare",
+                  "Thumbnail": "/resources/sd_kayak.png"
+               },
+               "name": "KAYAK",
+               "type": "url",
+               "url": "https://vivaldi.com/bk/kayak-fr"
+            }, {
+               "date_added": "13164656381395434",
+               "id": "16",
+               "meta_info": {
+                  "Description": "portal, start page",
+                  "Thumbnail": "/resources/sd_startme.png"
+               },
+               "name": "start.me",
+               "type": "url",
+               "url": "https://vivaldi.com/bk/startme-en-us"
+            }, {
+               "date_added": "13164656381396381",
+               "id": "17",
+               "meta_info": {
+                  "Thumbnail": "/resources/sd_facebook.png"
+               },
+               "name": "Facebook",
+               "type": "url",
+               "url": "https://vivaldi.com/bk/facebook"
+            }, {
+               "date_added": "13164656381399508",
+               "id": "18",
+               "meta_info": {
+                  "Thumbnail": "/resources/sd_twitter.png"
+               },
+               "name": "Twitter",
+               "type": "url",
+               "url": "https://twitter.com/"
+            }, {
+               "date_added": "13164656381401434",
+               "id": "19",
+               "meta_info": {
+                  "Thumbnail": "/resources/sd_fr_free.png"
+               },
+               "name": "Free",
+               "type": "url",
+               "url": "http://portail.free.fr/"
+            }, {
+               "date_added": "13164656381405287",
+               "id": "20",
+               "meta_info": {
+                  "Thumbnail": "/resources/sd_fr_leboncoin.png"
+               },
+               "name": "Leboncoin.fr",
+               "type": "url",
+               "url": "http://www.leboncoin.fr/"
+            }, {
+               "children": [ {
+                  "date_added": "13164656381408981",
+                  "id": "22",
+                  "meta_info": {
+                     "Thumbnail": "/resources/sd_fr_lefigaro.png"
+                  },
+                  "name": "Le Figaro",
+                  "type": "url",
+                  "url": "http://www.lefigaro.fr/"
+               }, {
+                  "date_added": "13164656381410646",
+                  "id": "23",
+                  "meta_info": {
+                     "Thumbnail": "/resources/sd_fr_lemonde.png"
+                  },
+                  "name": "Le Monde.fr",
+                  "type": "url",
+                  "url": "http://www.lemonde.fr/"
+               }, {
+                  "date_added": "13164656381413540",
+                  "id": "24",
+                  "meta_info": {
+                     "Thumbnail": "/resources/sd_fr_lexpress.png"
+                  },
+                  "name": "L`Express",
+                  "type": "url",
+                  "url": "http://www.lexpress.fr/"
+               }, {
+                  "date_added": "13164656381414565",
+                  "id": "25",
+                  "meta_info": {
+                     "Thumbnail": "/resources/sd_fr_nextinpact.png"
+                  },
+                  "name": "Next INpact",
+                  "type": "url",
+                  "url": "http://www.nextinpact.com/"
+               }, {
+                  "date_added": "13164656381417460",
+                  "id": "26",
+                  "meta_info": {
+                     "Thumbnail": "/resources/sd_fr_begeek.png"
+                  },
+                  "name": "BeGeek",
+                  "type": "url",
+                  "url": "http://www.begeek.fr/"
+               } ],
+               "date_added": "13164656381406136",
+               "date_modified": "13164656381417460",
+               "id": "21",
+               "name": "Actualités",
+               "type": "folder"
+            } ],
+            "date_added": "13164656381367312",
+            "date_modified": "13164656381406157",
+            "id": "6",
+            "meta_info": {
+               "Speeddial": "true"
+            },
+            "name": "Speed Dial",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13164656381421444",
+               "id": "28",
+               "meta_info": {
+                  "Description": "technology, hosting"
+               },
+               "name": "Domain Name Search | Advanced Domain Search Tool - GoDaddy",
+               "type": "url",
+               "url": "https://vivaldi.com/bk/godaddy"
+            }, {
+               "date_added": "13164656381422691",
+               "id": "29",
+               "name": "Le Journal du Geek - JDG Network",
+               "type": "url",
+               "url": "http://www.journaldugeek.com/"
+            }, {
+               "date_added": "13164656381428316",
+               "id": "30",
+               "name": "GNT - le portail des nouvelles technologies et du jeu vidéo : actualités et dossiers (logiciel, matériel, mobilité, internet, entreprise)",
+               "type": "url",
+               "url": "http://www.generation-nt.com/"
+            }, {
+               "date_added": "13164656381428901",
+               "id": "31",
+               "name": "Clubic : Actualité informatique, Comparatifs, Logiciels et Forum",
+               "type": "url",
+               "url": "http://www.clubic.com/"
+            }, {
+               "date_added": "13164656381429481",
+               "id": "32",
+               "name": "Korben - Upgrade your mind",
+               "type": "url",
+               "url": "http://korben.info/"
+            }, {
+               "date_added": "13164656381430039",
+               "id": "33",
+               "name": "Hébergeur 1&1 - Hébergement Web et domaines disponibles pour votre site internet",
+               "type": "url",
+               "url": "http://www.1and1.fr/"
+            }, {
+               "date_added": "13164656381430572",
+               "id": "34",
+               "name": "CCM - Comment Ça Marche - Communauté informatique",
+               "type": "url",
+               "url": "http://www.commentcamarche.net/"
+            }, {
+               "date_added": "13164656381432024",
+               "id": "35",
+               "name": "Âpp",
+               "type": "url",
+               "url": "http://xn--pp-oia.com/"
+            } ],
+            "date_added": "13164656381418564",
+            "date_modified": "13164656381432024",
+            "id": "27",
+            "name": "Technologie",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13164656381436409",
+               "id": "37",
+               "meta_info": {
+                  "Description": "games"
+               },
+               "name": "GamersGate - Buy and download games for PC now",
+               "type": "url",
+               "url": "https://vivaldi.com/bk/gamersgate"
+            }, {
+               "date_added": "13164656381437657",
+               "id": "38",
+               "name": "JEUXVIDEO.COM - La Référence des Jeux Vidéo sur PC et Consoles !",
+               "type": "url",
+               "url": "http://www.jeuxvideo.com/"
+            }, {
+               "date_added": "13164656381439132",
+               "id": "39",
+               "name": "Gamekult - Jeux vidéo PC et consoles",
+               "type": "url",
+               "url": "http://www.gamekult.com/"
+            }, {
+               "date_added": "13164656381454519",
+               "id": "40",
+               "name": "JEUXACTU : toute l`actualité du jeu vidéo",
+               "type": "url",
+               "url": "http://www.jeuxactu.com/"
+            }, {
+               "date_added": "13164656381455374",
+               "id": "41",
+               "name": "Gameblog.fr : Actu Jeux vidéo consoles, PC et mobile",
+               "type": "url",
+               "url": "http://www.gameblog.fr/"
+            }, {
+               "date_added": "13164656381456566",
+               "id": "42",
+               "name": "Minecraft.fr | Communauté Française Minecraft",
+               "type": "url",
+               "url": "http://minecraft.fr/"
+            }, {
+               "date_added": "13164656381457036",
+               "id": "43",
+               "name": "Le Journal du Gamer - Feed the Gamer Inside",
+               "type": "url",
+               "url": "http://www.journaldugamer.com/"
+            }, {
+               "date_added": "13164656381457511",
+               "id": "44",
+               "name": "JEUXVIDEO24.com | Toute l`actualité jeux vidéo 24h/24",
+               "type": "url",
+               "url": "http://www.jeuxvideo24.com/"
+            } ],
+            "date_added": "13164656381435366",
+            "date_modified": "13164656381457511",
+            "id": "36",
+            "name": "Jeux",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13164656381458939",
+               "id": "46",
+               "name": "Vente-privée",
+               "type": "url",
+               "url": "http://vente-privee.com/"
+            }, {
+               "date_added": "13164656381461013",
+               "id": "47",
+               "name": "Cdiscount.com - N°1 du e-commerce - Tous vos achats à prix discount",
+               "type": "url",
+               "url": "http://www.cdiscount.com/"
+            }, {
+               "date_added": "13164656381461508",
+               "id": "48",
+               "name": "Rue du Commerce - High tech - Maison - Brico !",
+               "type": "url",
+               "url": "http://www.rueducommerce.fr/"
+            }, {
+               "date_added": "13164656381461998",
+               "id": "49",
+               "name": "La Redoute",
+               "type": "url",
+               "url": "http://www.laredoute.fr/"
+            }, {
+               "date_added": "13164656381462493",
+               "id": "50",
+               "name": "Fnac : Informatique, jeux vidéo, livres, photos, jouets, électroménager neuf et occasion.",
+               "type": "url",
+               "url": "http://www.fnac.com/"
+            }, {
+               "date_added": "13164656381462967",
+               "id": "51",
+               "name": "Darty - Informatique, TV LCD et home cinéma, hifi et multimédia, PC et tablettes, photo numérique, cuisine et électroménager",
+               "type": "url",
+               "url": "http://www.darty.com/"
+            } ],
+            "date_added": "13164656381458506",
+            "date_modified": "13164656381462967",
+            "id": "45",
+            "name": "Commerce",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13164656381466376",
+               "id": "53",
+               "name": "L`ÉQUIPE - L`actualité du sport en continu.",
+               "type": "url",
+               "url": "http://www.lequipe.fr/"
+            }, {
+               "date_added": "13164656381466867",
+               "id": "54",
+               "name": "Sports.fr - Sport en direct, résultats, toute l`actualité sportive",
+               "type": "url",
+               "url": "http://www.sports.fr/"
+            }, {
+               "date_added": "13164656381467370",
+               "id": "55",
+               "name": "France Football , toute l`actualité du football",
+               "type": "url",
+               "url": "http://www.francefootball.fr/"
+            }, {
+               "date_added": "13164656381467843",
+               "id": "56",
+               "name": "Decathlon",
+               "type": "url",
+               "url": "http://www.decathlon.fr/"
+            }, {
+               "date_added": "13164656381468319",
+               "id": "57",
+               "name": "Yahoo Sport : toute l`actualité du sport 24h/24, 7 jours sur 7",
+               "type": "url",
+               "url": "https://fr.sports.yahoo.com/"
+            }, {
+               "date_added": "13164656381468790",
+               "id": "58",
+               "name": "francetv sport",
+               "type": "url",
+               "url": "http://www.francetvsport.fr/"
+            }, {
+               "date_added": "13164656381469354",
+               "id": "59",
+               "name": "FEDERATION FRANCAISE HANDISPORT - Site officiel",
+               "type": "url",
+               "url": "http://www.handisport.org/"
+            } ],
+            "date_added": "13164656381463474",
+            "date_modified": "13164656381469354",
+            "id": "52",
+            "name": "Sports",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13164656381473334",
+               "id": "61",
+               "meta_info": {
+                  "Description": "travel"
+               },
+               "name": "Dohop",
+               "type": "url",
+               "url": "https://www.dohop.com/?aff_wlname=Vivaldi"
+            }, {
+               "date_added": "13164656381473827",
+               "id": "62",
+               "meta_info": {
+                  "Description": "travel, hotels"
+               },
+               "name": "Hotels.com - Cheap Hotels, Discount Rates & Hotel Deals",
+               "type": "url",
+               "url": "https://vivaldi.com/bk/hotelscom"
+            }, {
+               "date_added": "13164656381474540",
+               "id": "63",
+               "name": "Mappy - Plans, itinéraires et cartes de France",
+               "type": "url",
+               "url": "http://fr.mappy.com/"
+            }, {
+               "date_added": "13164656381475543",
+               "id": "64",
+               "name": "Voyages-sncf.com",
+               "type": "url",
+               "url": "http://www.voyages-sncf.com/"
+            }, {
+               "date_added": "13164656381476023",
+               "id": "65",
+               "name": "Comptoir des Voyages",
+               "type": "url",
+               "url": "http://www.comptoir.fr/"
+            }, {
+               "date_added": "13164656381477425",
+               "id": "66",
+               "name": "lastminute.com : Agence de Voyage et Réservation de Vacances pas cher",
+               "type": "url",
+               "url": "http://www.fr.lastminute.com/"
+            }, {
+               "date_added": "13164656381477946",
+               "id": "67",
+               "name": "Voyage Promovacances : promotions et séjours pas chers. Agence de Voyages",
+               "type": "url",
+               "url": "http://www.promovacances.com/"
+            } ],
+            "date_added": "13164656381472838",
+            "date_modified": "13164656381477946",
+            "id": "60",
+            "name": "Voyage",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13164656381478859",
+               "id": "69",
+               "name": "Boursorama - Banque en ligne, bourse, cotation, cac 40",
+               "type": "url",
+               "url": "http://www.boursorama.com/"
+            }, {
+               "date_added": "13164656381479576",
+               "id": "70",
+               "name": "La Banque Postale",
+               "type": "url",
+               "url": "https://www.labanquepostale.fr/"
+            }, {
+               "date_added": "13164656381480559",
+               "id": "71",
+               "name": "Challenges - Actualité de l`économie, des finances et du patrimoine",
+               "type": "url",
+               "url": "http://www.challenges.fr/"
+            }, {
+               "date_added": "13164656381481026",
+               "id": "72",
+               "name": "Les Echos.fr",
+               "type": "url",
+               "url": "http://www.lesechos.fr/"
+            }, {
+               "date_added": "13164656381482569",
+               "id": "73",
+               "name": "Crédit Agricole - Banque et assurances",
+               "type": "url",
+               "url": "http://www.credit-agricole.fr/"
+            }, {
+               "date_added": "13164656381483038",
+               "id": "74",
+               "name": "Bourse de Paris",
+               "type": "url",
+               "url": "http://www.boursedeparis.fr/"
+            }, {
+               "date_added": "13164656381483673",
+               "id": "75",
+               "name": "De Particulier à Particulier",
+               "type": "url",
+               "url": "http://www.pap.fr/"
+            } ],
+            "date_added": "13164656381478432",
+            "date_modified": "13164656381483673",
+            "id": "68",
+            "name": "Affaires",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13164656381485583",
+               "id": "77",
+               "name": "AlloCiné : Cinéma, Séries TV, Stars, Vidéos, DVD et VOD",
+               "type": "url",
+               "url": "http://www.allocine.fr/"
+            }, {
+               "date_added": "13164656381486055",
+               "id": "78",
+               "name": "Votre programme TV avec télé loisirs : le programme télévision grandes chaînes, TNT et câble",
+               "type": "url",
+               "url": "http://www.programme-tv.net/"
+            }, {
+               "date_added": "13164656381486557",
+               "id": "79",
+               "name": "On Va Sortir! Le site gratuit des sorties entre amis et des rencontres amicales dans votre ville",
+               "type": "url",
+               "url": "http://www.onvasortir.com/"
+            }, {
+               "date_added": "13164656381487030",
+               "id": "80",
+               "name": "Garance Doré",
+               "type": "url",
+               "url": "http://www.garancedore.fr/"
+            }, {
+               "date_added": "13164656381488464",
+               "id": "81",
+               "name": "Familiscope : Activités pour enfants, sorties en famille, anniversaires et loisirs en France.",
+               "type": "url",
+               "url": "http://www.familiscope.fr/"
+            }, {
+               "date_added": "13164656381488946",
+               "id": "82",
+               "name": "Santé et bien être avec Doctissimo",
+               "type": "url",
+               "url": "http://www.doctissimo.fr/"
+            }, {
+               "date_added": "13164656381489431",
+               "id": "83",
+               "name": "Adopte un mec",
+               "type": "url",
+               "url": "https://www.adopteunmec.com/"
+            } ],
+            "date_added": "13164656381484134",
+            "date_modified": "13164656381489431",
+            "id": "76",
+            "name": "Loisirs",
+            "type": "folder"
+         } ],
+         "date_added": "13164656380021100",
+         "date_modified": "13164656381484152",
+         "id": "1",
+         "name": "Favoris",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13164656380021105",
+         "date_modified": "0",
+         "id": "2",
+         "name": "Autres favoris",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13164656380021106",
+         "date_modified": "0",
+         "id": "3",
+         "name": "Favoris sur mobile",
+         "type": "folder"
+      },
+      "trash": {
+         "children": [  ],
+         "date_added": "13164656380021107",
+         "date_modified": "0",
+         "id": "4",
+         "name": "Corbeille",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

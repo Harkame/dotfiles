@@ -88,6 +88,7 @@ alias rekt="shutdown 0"
 alias cw="cd /home/harkame/workspace";
 alias ct="cd /home/harkame/Téléchargements";
 alias cc="cd /home/harkame/.config";
+alias vivaldi="vivaldi-stable --no-sandbox"
 
 neofetch --memory_display infobar --disk_display infobar;
 echo '';
