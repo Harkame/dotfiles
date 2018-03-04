@@ -1,10 +1,7 @@
-!#/bin/bash
+!#/bin/zsh
 
-#Mappage fr
 setxkbmap fr
 
-#Reseau
 #systemctl restart dhpcpd
 
-#WM
 exec i3

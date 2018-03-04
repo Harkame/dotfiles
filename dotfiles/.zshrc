@@ -1,10 +1,5 @@
-# Path to your oh-my-zsh installation.
-  export ZSH=/home/harkame/.oh-my-zsh
+export ZSH=/home/harkame/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="harkame"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -73,21 +68,15 @@ export ARCHFLAGS="-arch x86_64"
 # ssh
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
 alias zshconfig="harkame ~/.zshrc"
 alias ohmyzsh="harkame ~/.oh-my-zsh"
 alias steam=LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' /usr/bin/steam
 alias clear="echo -e '\033c'";
 alias go="urxvt --hold -e";
 alias rekt="shutdown 0"
-alias cw="cd /home/harkame/workspace";
-alias ct="cd /home/harkame/Téléchargements";
-alias cc="cd /home/harkame/.config";
+alias cw="cd /home/${USER}/workspace";
+alias ct="cd /home/${USER}/Téléchargements";
+alias cc="cd /home/${USER}/.config";
 alias vivaldi="vivaldi-stable --no-sandbox"
 
 neofetch --memory_display infobar --disk_display infobar;
