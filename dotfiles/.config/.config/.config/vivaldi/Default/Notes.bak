@@ -1,0 +1,21 @@
+{
+   "checksum": "a9d09af88c6c17108271f2f1ce704d28",
+   "children": [ {
+      "children": [  ],
+      "date_added": "13164656380052923",
+      "id": "2",
+      "subject": "Other Notes",
+      "type": "other"
+   }, {
+      "children": [  ],
+      "date_added": "13164656380052923",
+      "id": "3",
+      "subject": "Corbeille",
+      "type": "trash"
+   } ],
+   "date_added": "13164656380052922",
+   "id": "1",
+   "subject": "Notes",
+   "type": "folder",
+   "version": 1
+}

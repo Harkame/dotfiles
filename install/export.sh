@@ -1,11 +1,13 @@
 #!/bin/zsh
 
-cp -r -f ../dotfiles/.config /home/$USER/.config;
+cp -r -f  ../dotfiles/.config /home/$USER/;
 
-cp -f ../dotfiles/.zshrc /home/$USER/.zshrc;
+cp -r -f  ../dotfiles/.oh-my-zsh /home/$USER/;
 
-cp -f ../dotfiles/.bashrc /home/$USER/.bashrc;
+cp -r -f  ../dotfiles/.ascii_script /home/$USER/;
 
-cp -f ../dotfiles/.Xdefaults /home/$USER/.Xdefaults;
+cp -r -f  ../dotfiles/.Xdefaults /home/$USER/;
 
-cp -f ../dotfiles/etc/pacman.conf /etc/pacman.conf;
+cp -r -f  ../dotfiles/.zshrc /home/$USER/;
+
+cp -r -f  ../dotfiles/etc/pacman.conf /etc/;
