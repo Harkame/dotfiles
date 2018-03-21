@@ -81,6 +81,8 @@ chsh -s /bin/zsh
 
 hwclock --hctosys
 
+rmmod pcspkr
+
 nano /etc/sudoers
 	+harkame ALL=(ALL) ALL
 
