@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+cp -r -f ../dotfiles/.xinitrc /home/$USER/;
+
 cp -r -f  ../dotfiles/.config /home/$USER/;
 
 cp -r -f  ../dotfiles/.oh-my-zsh /home/$USER/;

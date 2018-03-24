@@ -1,0 +1,9 @@
+!#/bin/zsh
+
+nmcli dev wifi connect
+
+setxkbmap fr
+
+#systemctl restart dhpcpd
+
+exec i3

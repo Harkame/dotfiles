@@ -2,6 +2,8 @@
 
 mkdir -p ../dotfiles/etc/;
 
+cp -r -f /home/$USER/.xinitrc ../dotfiles/;
+
 cp -r -f /home/$USER/.config/ ../dotfiles/;
 
 cp -r -f /home/$USER/.oh-my-zsh/ ../dotfiles/;
