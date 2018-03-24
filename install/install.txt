@@ -73,6 +73,10 @@ umount -R /mnt
 
 reboot
 
+pacman -Syu yaourt
+
+yaurt -Syu git
+
 echo "exec i3" >> .xinitrc
 
 ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
@@ -85,10 +89,6 @@ rmmod pcspkr
 
 nano /etc/sudoers
 	+harkame ALL=(ALL) ALL
-
-pacman -Syu yaourt
-
-yaurt -Syu git
 
 git config --global color.diff auto
 git config --global color.status auto
