@@ -34,7 +34,7 @@ arch-chroot /mnt
 	nano /etc/pacman.conf
 		[archlinuxfr]
 		SigLevel = Never
-		http://repo.archlinux.fr/$arch
+		Server = http://repo.archlinux.fr/$arch
 
 		[blackarch]
 		SigLevel = Never
