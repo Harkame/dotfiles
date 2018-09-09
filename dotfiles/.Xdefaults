@@ -1,57 +1,33 @@
-*utf8: 1
-*faceSize: 10
-*jumpScroll: true
-*multiScroll: true
-*boldMode: false
-*scrollBar: false
-*cutNewline: false
-*scrollTtyOutput: false
-*scrollKey: true
-*cursorBlink: true
-*dynamicColors: true
-*saveLines: 5000
-*geometry: 125x45
-
-URxvt*termName: rxvt-256color
-
-## borderless and no scrollbar
-URxvt*scrollBar_right: false
+! Pas de barre de défilement
 URxvt*scrollBar: true
-URxvt*borderLess: false
 
-## the transparency stuff
-URxvt*inheritPixmap: true
-URxvt*tintColor: white
-URxvt*shading: 20
+! font
+URxvt.font:xft:Monospace:pixelsize=15
+URxvt.boldfont:xft:Monospace-Bold:pixelsize=15
 
-## geometry and font
-URxvt*geometry: 84×24
-
-URxvt*font: xft:Hasklig Medium:pixelsize=14:antialias=true:hinting=true
-URxvt*boldFont: xft:Hasklig Medium:bold:pixelsize=14:antialias=true:hinting=true
-URxvt.letterSpace: -1
-
-## change default colors
+! Couleur d'arrière plan noir
 URxvt*background: #000000
-URxvt*foreground: #E03A20
-URxvt*color0: #000000
-URxvt*color1: #A80000
-URxvt*color2: #00A800
-URxvt*color3: #A85400
-URxvt*color4: #0000A8
-URxvt*color5: #A800A8
-URxvt*color6: #00A8A8
-URxvt*color7: #A8A8A8
-URxvt*color8: #545054
-URxvt*color9: #F85450
-URxvt*color10: #50FC50
-URxvt*color11: #F2FC50
-URxvt*color12: #5054F8
-URxvt*color13: #F854F8
-URxvt*color14: #50FCF8
-URxvt*color15: #F8FCF8
 
-URxvt.perl-ext-common: default,matcher
-URxvt.urlLauncher: firefox
-URxvt.matcher.button: 2
-URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+! Couleur d'avant plan blanc
+URxvt*foreground: #1D5FD2
+
+! Lien cliquable
+! Valeur possible pour l'option matcher button: 1=clic gauche, 2= clic milieu, 3=clic droit
+URxvt.perl-ext-common:  default,matcher
+URxvt.urlLauncher:      firefox
+URxvt.matcher.button:   1
+
+! Prise en charge des onglets
+! shift+bas ou clic sur NEW= ouvrir nouvel onglet,
+! shift + fleche gauche/droite=navigation dans les onglets.
+! ctrl + fleche gauche/droite= deplacement onglet
+! ctrl+d ou taper exit = fermer onglet/terminal
+#URxvt.perl-ext-common:  default,tabbed
+
+urxvt*transparent: true
+urxvt*shading: 30
+
+#URxvt.tabbed.tabbar-fg: 3
+#URxvt.tabbed.tabbar-bg: #000000
+#URxvt.tabbed.tab-fg:    1
+#URxvt.tabbed.tab-bg:    2

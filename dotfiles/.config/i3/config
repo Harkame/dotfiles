@@ -1,0 +1,132 @@
+#xmodmap
+
+font pango:monospace 8
+
+# kill focused window
+bindsym control+q kill
+
+# change focus
+bindsym control+Left focus left
+bindsym control+Down focus down
+bindsym control+Up focus up
+bindsym control+Right focus right
+
+# move on screen
+bindsym control+shift+Left move left
+bindsym control+shift+Down move down
+bindsym control+shift+Up move up
+bindsym control+shift+Right move right
+
+# fullscreen
+bindsym control+shift+f fullscreen toggle
+
+# switch workspace
+bindsym control+1 workspace 1
+bindsym control+2 workspace 2
+bindsym control+3 workspace 3
+bindsym control+4 workspace 4
+bindsym control+5 workspace 5
+bindsym control+6 workspace 6
+bindsym control+7 workspace 7
+bindsym control+8 workspace 8
+bindsym control+9 workspace 9
+bindsym control+0 workspace 10
+
+# move to workspace
+bindsym control+shift+1 move container to workspace 1
+bindsym control+shift+2 move container to workspace 2
+bindsym control+shift+3 move container to workspace 3
+bindsym control+shift+4 move container to workspace 4
+bindsym control+shift+5 move container to workspace 5
+bindsym control+shift+6 move container to workspace 6
+bindsym control+shift+7 move container to workspace 7
+bindsym control+shift+8 move container to workspace 8
+bindsym control+shift+9 move container to workspace 9
+bindsym control+shift+0 move container to workspace 10
+
+# restart
+bindsym control+shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym control+shift+p exec "i3-nagbar -t warning -m 'Quitter ?' -b 'Oui' 'i3-msg exit'"
+
+bar {
+	status_command i3blocks
+	position          top
+	workspace_buttons yes
+	tray_output       yes
+    	#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+	#i3bar_command i3bar -t
+	colors
+	{
+		background #000000
+		statusline #ffffff
+		separator #757575
+		focused_workspace  #ffffff #285577
+        	focused_workspace  #ffffff #000000
+        	active_workspace   #ffffff #000000
+        	inactive_workspace #888888 #222222
+        	urgent_workspace   #ffffff #900000
+	}
+}
+
+# Focus souris
+focus_follows_mouse no
+
+# Workspace precedent
+workspace_auto_back_and_forth yes
+
+# Bordure des nouvelles fenêtres (normal | none | 1pixel | pixel n)
+# fenêtres normales:
+new_window none
+
+# fenêtres flottantes:
+new_float normal
+# Assignation des logiciels à un espace:
+assign [class="atom"] 1
+assign [class="firefox"] 2
+
+# Modification des couleurs de la fenêtre ayant le focus:
+# class	       	   bordure	fond	texte	indicateur
+client.focused	   #FF00FF	#111111	#00FF00	#FF00FF
+
+# terminal
+bindsym control+t exec urxvtc
+
+# navigateur
+bindsym mod4+n  exec firefox
+
+# video
+bindsym mod4+l exec vlc
+
+# Editeur de texte
+bindsym mod4+a exec atom
+
+# gestionnaire - fichier
+bindsym mod4+f exec sunflower
+
+# gestionnaire - taches
+bindsym mod4+t exec lxtask
+
+# ide
+bindsym mod4+i exec gksudo eclipse
+
+###########
+#  START  #
+###########
+
+#Resolution
+exec xrandr --newmode "1920x1080_59.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync; xrandr --addmode Virtual-1 1920x1080_59.00; xrandr --output Virtual-1 --mode 1920x1080_59.00;
+
+#Wallpaper
+exec sh -c 'sleep 0.3'; feh --bg-scale '/home/harkame/Wallpapers/wallpaper.png'
+
+#Terminal en mode Demon
+exec sh -c 'sleep 0.4'; urxvtd -q -o -f
+
+for_window [class="^.*"] border pixel 1
+
+
+gaps inner 5
+gaps outer 5
+smart_gaps on
+smart_borders on
