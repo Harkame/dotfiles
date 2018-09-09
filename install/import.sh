@@ -2,6 +2,10 @@
 
 mkdir -p ../dotfiles/etc/;
 
+mkdir -p ../dotfiles/.local/share/fonts/;
+
+cp -p -f /home/$USER/.local/share/fonts ../dotfiles/.local/share/fonts;
+
 cp -r -f /home/$USER/.xinitrc ../dotfiles/;
 
 cp -r -f /home/$USER/.config/i3 ../dotfiles/.config/i3;

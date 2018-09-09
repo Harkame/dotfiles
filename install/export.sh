@@ -1,5 +1,11 @@
 #!/bin/zsh
 
+mkdir -p /home/$USER/.local/share/fonts/;
+
+cp -p -f ../dotfiles/.local/share/fonts /home/$USER/.local/share/fonts;
+
+fc-cache -fv;
+
 cp -r -f ../dotfiles/.xinitrc /home/$USER/;
 
 cp -r -f  ../dotfiles/.config /home/$USER/;
