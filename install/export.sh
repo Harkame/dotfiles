@@ -2,7 +2,7 @@
 
 mkdir -p /home/$USER/.local/share/fonts/;
 
-cp -p -f ../dotfiles/.local/share/fonts /home/$USER/.local/share/fonts;
+cp -r -f ../dotfiles/.local/share/fonts /home/$USER/.local/share/fonts;
 
 fc-cache -fv;
 

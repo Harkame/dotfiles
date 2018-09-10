@@ -90,7 +90,7 @@ alias ct="cd /home/harkame/Téléchargements";
 alias cc="cd /home/harkame/.config";
 alias vivaldi="vivaldi-stable --no-sandbox"
 
-neofetch --memory_display infobar --disk_display infobar;
+neofetch --memory_display infobar --disk_display infobar --ascii /home/harkame/.config/neofetch/pumpkin.sh;
 echo '';
 ls;
 echo '';

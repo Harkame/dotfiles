@@ -9,7 +9,7 @@ URxvt.boldfont:xft:Monospace-Bold:pixelsize=15
 URxvt*background: #000000
 
 ! Couleur d'avant plan blanc
-URxvt*foreground: #1D5FD2
+URxvt*foreground: #D05FEC
 
 ! Lien cliquable
 ! Valeur possible pour l'option matcher button: 1=clic gauche, 2= clic milieu, 3=clic droit
