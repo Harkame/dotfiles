@@ -1,3 +1,145 @@
-TODO : genfstab -p -U /mnt >> /mnt/etc/fstab
+loadkeys fr
+
+fdisk ...
+
+mkswap /dev/sda1
+swapon /dev/sda1
+
+mkfs.btrfs -L "Gentoo" -f -n 65536 /dev/sda2
+
+mount /dev/sda2 /mnt/gentoo
+
+cd /mnt/gentoo
+
+wget http://distfiles.gentoo.org/releases/amd64/autobuilds/20180909T214503Z/stage3-amd64-20180909T214503Z.tar.xz
+
+wget http://distfiles.gentoo.org/snapshots/portage-latest.tar.bz2
+
+tar xpf stage*
+
+tar xpfj por* -C usr/
+
+rm -rf stage*;
+
+rm -rf por*;
+
+cp -L /etc/resolv.conf /mnt/gentoo/etc/resolv.conf
+
+mount -t sysfs /sys/ /mnt/gentoo/sys/
+mount -t proc /proc/ /mnt/gentoo/proc/
+
+mount -o bind /dev/ /mnt/gentoo/dev/
+mount --bind /dev/ /mnt/gentoo/dev/
+
+chroot /mnt/gentoo /bin/bash
+
+env-update
+
+source /etc/profile
+
+export PS1="[chroot] $PS1"
+
+nano -w /etc/portage/make.conf
+  + MAKEOPTS="-j2"
+  + LINGUAS="fr"
+  + #VIDEO_CARDS="vmware"
+  + INPUT_DEVICES="evdev"
+
+nano -w /etc/locale.gen
+  +fr_FR.UTF-8 UTF-8
+
+nano -w /etc/env.d/02locale
+  + LANG="fr_FR.UTF-8"
+  + LC_COLLATE="C"
+
+nano -w /etc/conf.d/keymaps
+  keymap="fr"
+
+locale-gen
+
+env-update && source /etc/profile
+
+export PS1="[chroot] $PS1"
+
+cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
+
+nano -w /etc/conf.d/hwclock
+  CHECK UTC
+
+emerge --sync
+
+emerge -vq gentoo-sources
+  yes
 
 TODO : <device>   <mountpoint>  btrfs  defaults  0 0
+
+nano -w /etc/fstab
+  ~ /dev/ROOT -> /dev/sda1 btrfs
+
++ /dev/sda1 none swap sw 0 0
++ /dev/sda2 / btrfs noatime 0 0
+
+nano -w /etc/conf.d/hostname
+  ~ skadi
+
+nano -w /etc/hosts
+  ~~ (aliases) skadi
+
+# nano -w /etc/shh/shhd_config
+permitRootLogin yes
+#rc-update add sshd default
+
+ip a;
+
+cd /etc/init.d
+
+#REPLACE $2
+ln -sv net.lo net.$2
+
+rc-update add net.$2 default
+
+passwd
+  ~
+
+emerge -q dhcpcd
+
+cd /usr/src/linux
+
+make mrproper
+
+make menuconfig
+
+make -j2
+
+make modules_install
+
+make install
+
+ls -lh /boot
+
+emerge -vq grub
+
+emerge -vq htop app-misc/screen gentoolkit eix portage-utils
+
+grub-install /dev/sda
+
+grub-mkconfig -o /boot/grub/grub.cfg
+
+useradd -m hakrame
+
+passwd harkame
+  ~
+
+usermod -G wheel -a harkame
+
+umount -R /dev/sda
+
+reboot
+
+emerge --sync
+
+emerge -vq rsyslog logrotate ntp
+
+eix-sync
+
+emerge --search gentoolk
