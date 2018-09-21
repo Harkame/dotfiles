@@ -89,6 +89,8 @@ rmmod pcspkr
 
 nano /etc/sudoers
 	+harkame ALL=(ALL) ALL
+	
+chown -R harkame /home/harkame
 
 git config --global color.diff auto
 git config --global color.status auto
