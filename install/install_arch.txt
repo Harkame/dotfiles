@@ -95,3 +95,5 @@ git config --global color.status auto
 git config --global color.branch auto
 git config --global user.name Harkame
 git config --global user.email ~
+
+TODO : TEST https://www.reddit.com/r/archlinux/comments/3338jv/wireless_not_connecting_at_all_tried_everything/
