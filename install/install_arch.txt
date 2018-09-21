@@ -99,3 +99,4 @@ git config --global user.name Harkame
 git config --global user.email ~
 
 TODO : TEST https://www.reddit.com/r/archlinux/comments/3338jv/wireless_not_connecting_at_all_tried_everything/
+TODO : TEST https://askubuntu.com/questions/309461/how-to-disable-ipv6-permanently
