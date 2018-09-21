@@ -27,7 +27,7 @@ arch-chroot /mnt
 	systemctl enable NetworkManager.service
 
 	echo "KEYMAP=fr-latin9" >> /etc/vconsole.conf
-	echo "FONT=lat9w-16" >> /etc/vconsole.conf
+	echo "FONT=eurlatgr" >> /etc/vconsole.conf
 
 	sed -i "s/#fr_FR.UTF-8/fr_FR.UTF-8/g" /etc/locale.gen
 
