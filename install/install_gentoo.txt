@@ -23,7 +23,7 @@ rm -rf stage*;
 
 rm -rf por*;
 
-nano -w /mnt/gentoo/etc/portage/make.conf
+nano /mnt/gentoo/etc/portage/make.conf
   + MAKEOPTS="-j2"
   + L10N="fr"
   + VIDEO_CARDS="vmware"
@@ -47,11 +47,11 @@ env-update && source /etc/profile
 
 eselect profile set 12
 
-emerge -avuDN @world
+emerge -vuDN @world
 
 emerge --ask sys-fs/btrfs-progs
 
-nano -w /etc/locale.gen
+nano /etc/locale.gen
   +fr_FR.UTF-8 UTF-8
 
 locale-gen
@@ -60,11 +60,11 @@ eselect locale list
 
 eselect locale set X
 
-#nano -w /etc/env.d/02locale
+#nano /etc/env.d/02locale
 #  + LANG="fr_FR.UTF-8"
 #  + LC_COLLATE="C"
 
-nano -w /etc/conf.d/keymaps
+nano /etc/conf.d/keymaps
   keymap="fr"
 
 env-update && source /etc/profile
@@ -77,29 +77,34 @@ hwclock --systohc
 
 nano /etc/fstab
   + /dev/sda1 none swap sw 00
-  + /dev/sda2 / btrfs defualts 0 1
+  + /dev/sda2 / btrfs defaults 0 1
 
 etc-update
 
-emerge gentoo-sources genkernel
+#emerge gentoo-sources genkernel
 
-emerge pciutils usbutils
+#emerge pciutils usbutils
 
-emerge linux-firmware
+#emerge linux-firmware
 
-genkernel all
+#genkernel all
 
-nano -w /etc/conf.d/hostname
+
+
+nano /etc/conf.d/hostname
   ~ skadi
 
 
-emerge -a dhcpcd
+emerge dhcpcd net-misc/networkmanager
 
 ip a
 
-nano -w /etc/conf.d/net
+nano /etc/conf.d/net
 
 config_enp0s3="dhcp"
+
+cd /etc/init.d
+ln -sv net.lo net.enp0s3
 
 rc-update add net.enp0s3 default
 
@@ -107,7 +112,7 @@ passwd
   ~
   ~
 
-emerge -a grub
+emerge grub
 
 grub-install /dev/sda
 
