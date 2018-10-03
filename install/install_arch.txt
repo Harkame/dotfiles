@@ -1,13 +1,6 @@
 loadkeys fr
 
-fdisk /dev/sda
-	n
-	[enter]
-	[enter]
-	[enter]
-
-	a
-	w
+cfdisk /dev/sda
 
 mkswap /dev/sda1
 swapon /dev/sda1
