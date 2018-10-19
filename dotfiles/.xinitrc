@@ -2,6 +2,6 @@
 
 rmmod pcspkr
 
-#systemctl restart dhpcpd
+systemctl restart dhpcpd
 
 exec i3
