@@ -1,10 +1,7 @@
 !#/bin/bash
 
-#Mappage fr
-setxkbmap fr
+rmmod pcspkr
 
-#Reseau
 #systemctl restart dhpcpd
 
-#WM
 exec i3
