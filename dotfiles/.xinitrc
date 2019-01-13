@@ -1,7 +1,7 @@
-!#/bin/bash
+#!/bin/bash
 
-rmmod pcspkr
+setxkbmap fr
 
-systemctl restart dhpcpd
+dhcppd
 
 exec i3

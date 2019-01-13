@@ -67,9 +67,11 @@ umount -R /mnt
 
 reboot
 
-pacman -Syu yaourt
+pacman -Syu git
 
-yaurt -Syu git
+git clone https://aur/archlinux.org/trizen.git
+
+cd trizen mkepkg -si
 
 echo "exec i3" >> .xinitrc
 
