@@ -13,7 +13,7 @@ mount /dev/sda2 /mnt
 sed -i "s/Server/#Server/g" /etc/pacman.d/mirrorlist
 #uncomment the choosen one>
 
-pacstrap /mnt base base-devel networkmanager grub btrfs-progs
+pacstrap /mnt base base-devel networkmanager grub btrfs-progs linux
 genfstab -p -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt
@@ -47,6 +47,7 @@ arch-chroot /mnt
 
 	echo "Skadi" >> /etc/hostname
 
+	mkdir /boot/grub/
 	grub-mkconfig -o /boot/grub/grub.cfg
 	grub-install --no-floppy --recheck /dev/sda
 
@@ -67,11 +68,7 @@ umount -R /mnt
 
 reboot
 
-pacman -Syu git
-
-git clone https://aur/archlinux.org/trizen.git
-
-cd trizen mkepkg -si
+pacman -Syu git yay
 
 echo "exec i3" >> .xinitrc
 
