@@ -35,14 +35,14 @@ echo "FONT=eurlatgr" >> /etc/vconsole.conf
 
 read -p "[vconsole.conf finished] Press enter"
 
-echo "" >> /etc/vconsole.conf
+echo "" >> /etc/pacman.conf
 echo "[archlinuxfr]" >> /etc/pacman.conf
-echo "SigLevel = Never" >> /etc/vconsole.conf
-echo "Server = http://repo.archlinux.fr/$arch" >> /etc/vconsole.conf
-echo "" >> /etc/vconsole.conf
-echo "[blackarch]" >> /etc/vconsole.conf
-echo "SigLevel = Never" >> /etc/vconsole.conf
-echo "Server = http://blackarch.org/blackarch/$repo/os/$arch" >> /etc/vconsole.conf
+echo "SigLevel = Never" >> /etc/pacman.conf
+echo "Server = http://repo.archlinux.fr/$arch" >> /etc/pacman.conf
+echo "" >> /etc/pacman.conf
+echo "[blackarch]" >> /etc/pacman.conf
+echo "SigLevel = Never" >> /etc/pacman.conf
+echo "Server = http://blackarch.org/blackarch/$repo/os/$arch" >> /etc/pacman.conf
 
 read -p "[vconsole.conf finished] Press enter"
 
