@@ -1,3 +1,5 @@
+wipefs -a /dev/sda
+
 parted -a optimal /dev/sda mklabel gpt mkpart primary linux-swap 0% 4096MB
 parted -a optimal /dev/sda mkpart primary 4096MB 100%
 
@@ -13,13 +15,10 @@ mkfs.btrfs -L "Arch" -f -n 65536 /dev/sda2
 
 mount /dev/sda2 /mnt
 
-<<<<<<< HEAD
-=======
 sed -i "s/Server/#Server/g" /etc/pacman.d/mirrorlist
 #uncomment the choosen one>
 
 pacstrap /mnt base base-devel networkmanager grub btrfs-progs linux
->>>>>>> cc730639d82e77328a33df432abbcc43c4dbf7a5
 genfstab -p -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt
