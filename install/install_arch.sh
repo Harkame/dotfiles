@@ -3,8 +3,12 @@
 umount -R /mnt
 wipefs -af /dev/sda
 
+read "[cleanup finished] Press enter"
+
 parted -a optimal /dev/sda mklabel gpt mkpart primary linux-swap 0% 4096MB
 parted -a optimal /dev/sda mkpart primary 4096MB 100%
+
+read "[parted finished] Press enter"
 
 mkswap /dev/sda1
 swapon /dev/sda1
@@ -12,16 +16,24 @@ swapon /dev/sda1
 #mkfs.ext4 -L "Boot" /dev/sda1
 mkfs.btrfs -L "Arch" -f -n 65536 /dev/sda2
 
+read "[mkswap + mkfs finished] Press enter"
+
 mount /dev/sda2 /mnt
 
 pacstrap /mnt base base-devel networkmanager grub btrfs-progs mkinitcpio linux
+
+read "[pacstrap finished] Press enter"
 
 genfstab -p -U /mnt >> /mnt/etc/fstab
 
 systemctl enable NetworkManager.service
 
+read "[genfstab + systemctl finished] Press enter"
+
 echo "KEYMAP=fr-latin9" >> /etc/vconsole.conf
 echo "FONT=eurlatgr" >> /etc/vconsole.conf
+
+read "[vconsole.conf finished] Press enter"
 
 echo "" >> /etc/vconsole.conf
 echo "[archlinuxfr]" >> /etc/pacman.conf
@@ -32,10 +44,16 @@ echo "[blackarch]" >> /etc/vconsole.conf
 echo "SigLevel = Never" >> /etc/vconsole.conf
 echo "Server = http://blackarch.org/blackarch/$repo/os/$arch" >> /etc/vconsole.conf
 
+read "[vconsole.conf finished] Press enter"
+
 pacman -Syu
+
+read "[pacman] Press enter"
 
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 hwclock --systohc --utc
+
+read "[hwclock finished] Press enter"
 
 echo "Skadi" >> /etc/hostname
 
@@ -43,10 +61,18 @@ mkdir /boot/grub/
 grub-mkconfig -o /boot/grub/grub.cfg
 grub-install --target=x86_64-efi --efi-directory=esp --boot-directory=/mnt/boot --bootloader-id=GRUB /dev/sda
 
+read "[grub-install] Press enter"
+
 mkinitcpio -p linux
+
+read "[mkinitcpio finished] Press enter"
 
 useradd -m -g users -G wheel -s /bin/bash harkame
 
+read "[] Press enter"
+
 umount -R /mnt
+
+read "[] Press enter"
 
 reboot
