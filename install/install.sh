@@ -15,45 +15,42 @@ mkfs.btrfs -L "Arch" -f -n 65536 /dev/sda2
 
 mount /dev/sda2 /mnt
 
-pacstrap /mnt base base-devel grub btrfs-progs mkinitcpio linux
+pacstrap /mnt base base-devel grub2 btrfs-progs mkinitcpio linux
 
 arch-chroot /mnt bash -c '
-	genfstab -p -U /mnt >> /mnt/etc/fstab;
+	genfstab -p -U /mnt >> /mnt/etc/fstab
 
-	pacman -Sy networkmanager --noconfirm;
-	systemctl enable NetworkManager.service;
+	pacman -Sy networkmanager --noconfirm
+	systemctl enable NetworkManager.service
 
-	echo "KEYMAP=fr-latin9" >> /etc/vconsole.conf;
-	echo "FONT=eurlatgr" >> /etc/vconsole.conf;
+	echo "KEYMAP=fr-latin9" >> /etc/vconsole.conf
+	echo "FONT=eurlatgr" >> /etc/vconsole.conf
 
-	echo "" >> /etc/pacman.conf;
-	echo "[archlinuxfr]" >> /etc/pacman.conf;
-	echo "SigLevel = Never" >> /etc/pacman.conf;
-	echo "Server = http://repo.archlinux.fr/\$arch" >> /etc/pacman.conf;
-	echo "" >> /etc/pacman.conf;
-	echo "[blackarch]" >> /etc/pacman.conf;
-	echo "SigLevel = Never" >> /etc/pacman.conf;
-	echo "Server = http://blackarch.org/blackarch/\$repo/os/\$arch" >> /etc/pacman.conf;
+	echo "" >> /etc/pacman.conf
+	echo "[archlinuxfr]" >> /etc/pacman.conf
+	echo "SigLevel = Never" >> /etc/pacman.conf
+	echo "Server = http://repo.archlinux.fr/\$arch" >> /etc/pacman.conf
+	echo "" >> /etc/pacman.conf
+	echo "[blackarch]" >> /etc/pacman.conf
+	echo "SigLevel = Never" >> /etc/pacman.conf
+	echo "Server = http://blackarch.org/blackarch/\$repo/os/\$arch" >> /etc/pacman.conf
 
-	pacman -Syu;
+	pacman -Syu
 
-	ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime;
-	hwclock --systohc --utc;
+	ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
+	hwclock --systohc --utc
 
-	echo "Skadi" >> /etc/hostname;
+	echo "Skadi" >> /etc/hostname
 
-	mkdir /boot/grub/
-	grub-mkconfig -o /boot/grub/grub.cfg
-	grub-install --target=x86_64-efi --efi-directory=esp --boot-directory=/mnt/boot --bootloader-id=GRUB /dev/sda;
+	grub2-mkconfig -o /boot/grub/grub.cfg
+	grub2-install /dev/sda
 
-	mkinitcpio -p linux;
+	mkinitcpio -p linux
 
-	echo -e "mypassword\nmypassword" | passwd root;
+	echo -e "mypassword\nmypassword" | passwd root
 
-	useradd -m -g users -G wheel -s /bin/bash harkame;
-	echo -e "mypassword\nmypassword" | passwd harkame;
+	useradd -m -g users -G wheel -s /bin/bash harkame
+	echo -e "mypassword\nmypassword" | passwd harkame
 '
 
 umount -R /mnt
-
-reboot
