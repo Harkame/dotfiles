@@ -6,7 +6,7 @@ wipefs -af /dev/sda
 parted -a optimal /dev/sda mklabel gpt mkpart primary linux-swap 0% 4096MB
 parted -a optimal /dev/sda mkpart primary 4096MB 100%
 
-echo -e "set 2 boot on" | parted /dev/sda
+echo -e "set 2 bios_grub on" | parted /dev/sda
 
 mkswap /dev/sda1
 swapon /dev/sda1
