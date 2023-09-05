@@ -17,7 +17,7 @@ mount /dev/sda2 /mnt
 pacstrap /mnt base base-devel grub btrfs-progs mkinitcpio linux
 
 chmod +x chroot.sh
-arch-chroot /mnt chroot.sh
+arch-chroot /mnt ./chroot.sh
 
 umount -R /mnt
 
