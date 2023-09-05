@@ -1,6 +1,9 @@
-loadkeys fr
+parted -a optimal /dev/sda mklabel gpt mkpart primary linux-swap 0% 4096MB
+parted -a optimal /dev/sda mkpart primary 4096MB 100%
 
-cfdisk /dev/sda
+return
+
+pacstrap /mnt base base-devel networkmanager grub btrfs-progs mkinitcpio linux git
 
 mkswap /dev/sda1
 swapon /dev/sda1
@@ -10,10 +13,13 @@ mkfs.btrfs -L "Arch" -f -n 65536 /dev/sda2
 
 mount /dev/sda2 /mnt
 
+<<<<<<< HEAD
+=======
 sed -i "s/Server/#Server/g" /etc/pacman.d/mirrorlist
 #uncomment the choosen one>
 
 pacstrap /mnt base base-devel networkmanager grub btrfs-progs linux
+>>>>>>> cc730639d82e77328a33df432abbcc43c4dbf7a5
 genfstab -p -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt
@@ -49,7 +55,7 @@ arch-chroot /mnt
 
 	mkdir /boot/grub/
 	grub-mkconfig -o /boot/grub/grub.cfg
-	grub-install --no-floppy --recheck /dev/sda
+	grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB /dev/sda
 
 	mkinitcpio -p linux
 
@@ -82,7 +88,7 @@ rmmod pcspkr
 
 nano /etc/sudoers
 	+harkame ALL=(ALL) ALL
-	
+
 chown -R harkame /home/harkame
 
 git config --global color.diff auto
