@@ -1,9 +1,9 @@
 wipefs -af /dev/sda
-
+return
 parted -a optimal /dev/sda mklabel gpt mkpart primary linux-swap 0% 4096MB
 parted -a optimal /dev/sda mkpart primary 4096MB 100%
 
-return
+
 
 pacstrap /mnt base base-devel networkmanager grub btrfs-progs mkinitcpio linux git
 
