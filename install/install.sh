@@ -43,6 +43,10 @@ arch-chroot /mnt bash -c '
 	echo "Skadi" >> /etc/hostname
 
 	grub-mkconfig -o /boot/grub/grub.cfg
+
+	efivars on /sys/firmware/efi/efivars type efivars (rw,nosuid,nodev,noexec,relatime)
+	mount -t efivarfs efivarfs /sys/firmware/efi/efivarfs
+
 	grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub --recheck
 	update-grub
 
