@@ -15,7 +15,7 @@ mkfs.btrfs -L "Arch" -f -n 65536 /dev/sda2
 
 mount /dev/sda2 /mnt
 
-pacstrap /mnt base base-devel grub2 btrfs-progs mkinitcpio linux
+pacstrap /mnt base base-devel grub btrfs-progs mkinitcpio linux
 
 arch-chroot /mnt bash -c '
 	genfstab -p -U /mnt >> /mnt/etc/fstab
@@ -42,8 +42,8 @@ arch-chroot /mnt bash -c '
 
 	echo "Skadi" >> /etc/hostname
 
-	grub2-mkconfig -o /boot/grub/grub.cfg
-	grub2-install /dev/sda
+	grub-mkconfig -o /boot/grub/grub.cfg
+	grub-install /dev/sda
 
 	mkinitcpio -p linux
 
