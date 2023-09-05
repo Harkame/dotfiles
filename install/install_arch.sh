@@ -12,87 +12,43 @@ mkfs.btrfs -L "Arch" -f -n 65536 /dev/sda2
 
 mount /dev/sda2 /mnt
 
-pacstrap /mnt base base-devel networkmanager grub btrfs-progs mkinitcpio linux git
+pacstrap /mnt base base-devel networkmanager grub btrfs-progs mkinitcpio linux
 
 
 genfstab -p -U /mnt >> /mnt/etc/fstab
 
-return
-
 arch-chroot /mnt
 
-	systemctl enable NetworkManager.service
+systemctl enable NetworkManager.service
 
-	echo "KEYMAP=fr-latin9" >> /etc/vconsole.conf
-	echo "FONT=eurlatgr" >> /etc/vconsole.conf
+echo "KEYMAP=fr-latin9" >> /etc/vconsole.conf
+echo "FONT=eurlatgr" >> /etc/vconsole.conf
 
-	sed -i "s/#fr_FR.UTF-8/fr_FR.UTF-8/g" /etc/locale.gen
+echo "[archlinuxfr]" >> /etc/pacman.conf
+echo "SigLevel = Never" >> /etc/vconsole.conf
+echo "Server = http://repo.archlinux.fr/$arch" >> /etc/vconsole.conf
 
-	nano /etc/pacman.conf
-		[archlinuxfr]
-		SigLevel = Never
-		Server = http://repo.archlinux.fr/$arch
+echo "[blackarch]" >> /etc/vconsole.conf
+echo "SigLevel = Never" >> /etc/vconsole.conf
+echo "Server = http://blackarch.org/blackarch/$repo/os/$arch" >> /etc/vconsole.conf
 
-		[blackarch]
-		SigLevel = Never
-		Server = http://blackarch.org/blackarch/$repo/os/$arch
+pacman -Syu
 
-	pacman -Syu
+ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
+hwclock --systohc --utc
 
-	echo "LANG=fr_FR.UTF-8" >> /etc/locale.conf
-	echo "LC_COLLATE=C" >> /etc/locale.conf
+echo "Skadi" >> /etc/hostname
 
-	export LANG=fr_FR.UTF-8
-	locale-gen
+mkdir /boot/grub/
+grub-mkconfig -o /boot/grub/grub.cfg
+grub-install --target=x86_64-efi --efi-directory=esp --boot-directory=/mnt/boot --bootloader-id=GRUB /dev/sda
 
-	ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
-	hwclock --systohc --utc
+mkinitcpio -p linux
 
-	echo "Skadi" >> /etc/hostname
-
-	mkdir /boot/grub/
-	grub-mkconfig -o /boot/grub/grub.cfg
-	grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB /dev/sda
-
-	mkinitcpio -p linux
-
-	passwd root
-		~
-		~
-
-	useradd -m -g users -G wheel -s /bin/bash harkame
-	passwd harkame
-		~
-		~
+useradd -m -g users -G wheel -s /bin/bash harkame
 
 exit
 
 umount -R /mnt
 
 reboot
-
-pacman -Syu git yay
-
-echo "exec i3" >> .xinitrc
-
-ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
-
-chsh -s /bin/zsh
-
-hwclock --hctosys
-
-rmmod pcspkr
-
-nano /etc/sudoers
-	+harkame ALL=(ALL) ALL
-
-chown -R harkame /home/harkame
-
-git config --global color.diff auto
-git config --global color.status auto
-git config --global color.branch auto
-git config --global user.name Harkame
-git config --global user.email ~
-
-TODO : TEST https://www.reddit.com/r/archlinux/comments/3338jv/wireless_not_connecting_at_all_tried_everything/
-TODO : TEST https://askubuntu.com/questions/309461/how-to-disable-ipv6-permanently
