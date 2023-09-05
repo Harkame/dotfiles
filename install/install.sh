@@ -43,7 +43,7 @@ arch-chroot /mnt bash -c '
 	echo "Skadi" >> /etc/hostname
 
 	grub-mkconfig -o /boot/grub/grub.cfg
-	grub-install /dev/sda
+	grub-install /dev/sda --boot-directory=/mnt/boot
 
 	mkinitcpio -p linux
 
