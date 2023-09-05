@@ -24,6 +24,8 @@ pacstrap /mnt base base-devel networkmanager grub btrfs-progs mkinitcpio linux
 
 read -p "[pacstrap finished] Press enter"
 
+arch-chroot /mnt
+
 genfstab -p -U /mnt >> /mnt/etc/fstab
 
 systemctl enable NetworkManager.service
@@ -68,6 +70,8 @@ mkinitcpio -p linux
 read -p "[mkinitcpio finished] Press enter"
 
 useradd -m -g users -G wheel -s /bin/bash harkame
+
+exit
 
 read -p "[] Press enter"
 
