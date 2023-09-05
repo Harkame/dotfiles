@@ -14,20 +14,18 @@ mount /dev/sda2 /mnt
 
 pacstrap /mnt base base-devel networkmanager grub btrfs-progs mkinitcpio linux
 
-
 genfstab -p -U /mnt >> /mnt/etc/fstab
-
-arch-chroot /mnt
 
 systemctl enable NetworkManager.service
 
 echo "KEYMAP=fr-latin9" >> /etc/vconsole.conf
 echo "FONT=eurlatgr" >> /etc/vconsole.conf
 
+echo "" >> /etc/vconsole.conf
 echo "[archlinuxfr]" >> /etc/pacman.conf
 echo "SigLevel = Never" >> /etc/vconsole.conf
 echo "Server = http://repo.archlinux.fr/$arch" >> /etc/vconsole.conf
-
+echo "" >> /etc/vconsole.conf
 echo "[blackarch]" >> /etc/vconsole.conf
 echo "SigLevel = Never" >> /etc/vconsole.conf
 echo "Server = http://blackarch.org/blackarch/$repo/os/$arch" >> /etc/vconsole.conf
@@ -46,8 +44,6 @@ grub-install --target=x86_64-efi --efi-directory=esp --boot-directory=/mnt/boot 
 mkinitcpio -p linux
 
 useradd -m -g users -G wheel -s /bin/bash harkame
-
-exit
 
 umount -R /mnt
 
