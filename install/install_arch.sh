@@ -1,3 +1,5 @@
+#!/bin/bash
+
 umount -R /mnt
 wipefs -af /dev/sda
 
