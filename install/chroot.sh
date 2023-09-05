@@ -28,4 +28,7 @@ grub-install --target=x86_64-efi --efi-directory=esp --boot-directory=/mnt/boot 
 
 mkinitcpio -p linux
 
+echo -e "mypassword\mypassword" | passwd root
+
 useradd -m -g users -G wheel -s /bin/bash harkame
+echo -e "mypassword\mypassword" | passwd harkame
