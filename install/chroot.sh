@@ -1,7 +1,7 @@
-arch-chroot /mnt '
+arch-chroot /mnt bash -c '
 	genfstab -p -U /mnt >> /mnt/etc/fstab;
 
-	pacman -Sy networkmanager;
+	pacman -Sy networkmanager --noconfirm;
 	systemctl enable NetworkManager.service;
 
 	echo "KEYMAP=fr-latin9" >> /etc/vconsole.conf;
@@ -29,8 +29,8 @@ arch-chroot /mnt '
 
 	mkinitcpio -p linux;
 
-	echo -e "mypassword\mypassword" | passwd root;
+	echo -e "mypassword\nmypassword" | passwd root;
 
 	useradd -m -g users -G wheel -s /bin/bash harkame;
-	echo -e "mypassword\mypassword" | passwd harkame;
+	echo -e "mypassword\nmypassword" | passwd harkame;
 '
