@@ -43,7 +43,11 @@ arch-chroot /mnt bash -c '
 	echo "Skadi" >> /etc/hostname
 
 	grub-mkconfig -o /boot/grub/grub.cfg
-	grub-install /dev/sda --boot-directory=/mnt/boot
+	grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub --recheck
+	update-grub
+
+	mkdir /boot/EFI/boot
+	cp /boot/EFI/arch_grub/grubx64.efi /boot/EFI/boot/bootx64.efi
 
 	mkinitcpio -p linux
 
