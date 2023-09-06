@@ -60,4 +60,4 @@ arch-chroot /mnt bash -c '
 	echo -e "mypassword\nmypassword" | passwd harkame
 '
 
-#umount -R /mnt
+umount -R /mnt
