@@ -60,6 +60,8 @@ arch-chroot /mnt bash -c '
 	echo -e "mypassword\nmypassword" | passwd harkame
 '
 
+sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+
 umount -R /mnt
 
 reboot
