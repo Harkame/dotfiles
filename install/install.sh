@@ -3,23 +3,26 @@
 umount -R /mnt
 wipefs -af /dev/sda
 
-parted -a optimal /dev/sda mklabel gpt mkpart primary linux-swap 0% 4096MB
-parted -a optimal /dev/sda mkpart primary 4096MB 100%
+parted -a optimal /dev/sda mklabel gpt mkpart primary linux-swap 0% 1024MB
+parted -a optimal /dev/sda mklabel gpt mkpart primary linux-swap 1024MB 4096MB
+parted -a optimal /dev/sda mkpart primary 5096MB 100%
 
-echo -e "set 2 bios_grub on" | parted /dev/sda
+echo -e "set 1 bios_grub on" | parted /dev/sda
 
-mkswap /dev/sda1
-swapon /dev/sda1
+mkswap /dev/sda2
+swapon /dev/sda2
 
-mkfs.btrfs -L "Arch" -f -n 65536 /dev/sda2
+mkfs.fat -F 32 /dev/sda1
+mkfs.btrfs -L "Arch" -f -n 65536 /dev/sda3
 
-mount /dev/sda2 /mnt
+mount /dev/sda3 /mnt
+mount --mkdir /dev/sda1 /mnt/boot
 
-pacstrap /mnt base base-devel grub btrfs-progs mkinitcpio linux
+pacstrap /mnt base base-devel grub btrfs-progs mkinitcpio linux linux-firmware
+
+genfstab -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt bash -c '
-	genfstab -p -U /mnt >> /mnt/etc/fstab
-
 	pacman -Sy networkmanager --noconfirm
 	systemctl enable NetworkManager.service
 
@@ -38,19 +41,15 @@ arch-chroot /mnt bash -c '
 	pacman -Syu
 
 	ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
-	hwclock --systohc --utc
+	hwclock --systohc
+	locale-gen
 
 	echo "Skadi" >> /etc/hostname
 
 	grub-mkconfig -o /boot/grub/grub.cfg
 
-	grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub --recheck
+	grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB --recheck
 	update-grub
-
-	mkdir /boot/EFI/boot
-	cp /boot/EFI/arch_grub/grubx64.efi /boot/EFI/boot/bootx64.efi
-
-	mkinitcpio -p linux
 
 	echo -e "mypassword\nmypassword" | passwd root
 
@@ -59,3 +58,5 @@ arch-chroot /mnt bash -c '
 '
 
 umount -R /mnt
+
+reboot
