@@ -4,8 +4,8 @@ umount -R /mnt
 wipefs -af /dev/sda
 
 parted -a optimal /dev/sda mklabel gpt mkpart primary linux-swap 0% 1024MB
-parted -a optimal /dev/sda mklabel gpt mkpart primary 1024MB 4096MB
-parted -a optimal /dev/sda mklabel gpt mkpart primary 5096MB 100%
+parted -a optimal /dev/sda mkpart primary 1024MB 4096MB
+parted -a optimal /dev/sda mkpart primary 5096MB 100%
 
 echo -e "set 1 bios_grub on" | parted /dev/sda
 
