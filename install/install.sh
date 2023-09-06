@@ -20,7 +20,7 @@ mkfs.btrfs -L "Arch" -f -n 65536 /dev/sda3
 mount /dev/sda3 /mnt
 mount --mkdir /dev/sda1 /mnt/boot
 
-pacstrap /mnt base base-devel grub btrfs-progs mkinitcpio linux linux-firmware
+pacstrap /mnt base base-devel grub btrfs-progs mkinitcpio linux linux-firmware efibootmgr
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
@@ -48,11 +48,11 @@ arch-chroot /mnt bash -c '
 
 	echo "Skadi" >> /etc/hostname
 
-	#mkdir /boot/grub
-	#grub-mkconfig -o /boot/grub/grub.cfg
-	#grub-install /dev/sda --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck
+	mkdir /boot/grub
+	grub-mkconfig -o /boot/grub/grub.cfg
+	grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck
 
-	#mkinitcpio -p linux
+	mkinitcpio -p linux
 
 	echo -e "mypassword\nmypassword" | passwd root
 
