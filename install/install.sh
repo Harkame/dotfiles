@@ -29,7 +29,7 @@ arch-chroot /mnt bash -c '
 	systemctl enable NetworkManager.service
 
 	echo "KEYMAP=fr-latin9" >> /etc/vconsole.conf
-	echo "FONT=eurlatgr" >> /etc/vconsole.conf
+	echo "FONT=lat9w-16" >> /etc/vconsole.conf
 
 	echo "" >> /etc/pacman.conf
 	echo "[archlinuxfr]" >> /etc/pacman.conf
@@ -61,3 +61,5 @@ arch-chroot /mnt bash -c '
 '
 
 umount -R /mnt
+
+reboot
