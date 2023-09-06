@@ -4,8 +4,8 @@ umount -R /mnt
 wipefs -af /dev/sda
 
 parted /dev/sda mklabel gpt
-parted -a optimal /dev/sda mkpart primary fat32 0 1024MB
-parted -a optimal /dev/sda mkpart primary linux-swap 1024MB 4096MB
+parted -a optimal /dev/sda mkpart primary fat32 0% 1024MB
+parted -a optimal /dev/sda mkpart primary linux-swap 1024MB 5096MB
 parted -a optimal /dev/sda mkpart primary btrfs 5096MB 100%
 
 echo -e "set 1 bios_grub on" | parted /dev/sda
@@ -48,9 +48,11 @@ arch-chroot /mnt bash -c '
 
 	echo "Skadi" >> /etc/hostname
 
-	mkdir /boot/grub
-	grub-mkconfig -o /boot/grub/grub.cfg
-	grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck
+	#mkdir /boot/grub
+	#grub-mkconfig -o /boot/grub/grub.cfg
+	#grub-install /dev/sda --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck
+
+	#mkinitcpio -p linux
 
 	echo -e "mypassword\nmypassword" | passwd root
 
@@ -58,4 +60,4 @@ arch-chroot /mnt bash -c '
 	echo -e "mypassword\nmypassword" | passwd harkame
 '
 
-umount -R /mnt
+#umount -R /mnt
