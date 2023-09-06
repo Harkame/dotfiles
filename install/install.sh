@@ -20,7 +20,7 @@ mkfs.btrfs -L "Arch" -f -n 65536 /dev/sda3
 mount /dev/sda3 /mnt
 mount --mkdir /dev/sda1 /mnt/boot
 
-pacstrap /mnt base base-devel grub btrfs-progs mkinitcpio linux linux-firmware efibootmgr
+pacstrap /mnt base base-devel grub btrfs-progs mkinitcpio linux linux-firmware efibootmgr nano
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
@@ -28,8 +28,8 @@ arch-chroot /mnt bash -c '
 	pacman -Sy networkmanager --noconfirm
 	systemctl enable NetworkManager.service
 
-	echo "KEYMAP=fr-latin9" >> /etc/vconsole.conf
-	echo "FONT=lat9w-16" >> /etc/vconsole.conf
+	echo "KEYMAP=fr" >> /etc/vconsole.conf
+	echo "FONT=eurlatgr" >> /etc/vconsole.conf
 
 	echo "" >> /etc/pacman.conf
 	echo "[archlinuxfr]" >> /etc/pacman.conf
