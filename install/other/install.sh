@@ -22,6 +22,7 @@ wget https://distfiles.gentoo.org/releases/amd64/autobuilds/20230917T164636Z/sta
 
 tar xpf stage
 
+cd /mnt/gentoo
 mount --types proc /proc /mnt/gentoo/proc
 mount --rbind /sys /mnt/gentoo/sys
 mount --make-rslave /mnt/gentoo/sys
@@ -29,7 +30,9 @@ mount --rbind /dev /mnt/gentoo/dev
 mount --make-rslave /mnt/gentoo/dev
 mount --bind /run /mnt/gentoo/run
 mount --make-slave /mnt/gentoo/run
-cp /etc/resolv.conf etc && chroot . /bin/bash
+cp /etc/resolv.conf etc
+
+chroot . /bin/bash
 source /etc/profile
 
 emerge-webrsync
