@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -Syu yay
+sudo pacman -Syu yay --noconfirm
 
 yay -Sy --noconfirm - < package.txt
 
