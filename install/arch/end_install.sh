@@ -2,9 +2,11 @@
 
 sudo pacman -Syu yay
 
+yay -Sy --noconfirm - < package.txt
+
 echo "exec i3" >> .xinitrc
 
-ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
+sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 
 chsh -s /bin/zsh
 
