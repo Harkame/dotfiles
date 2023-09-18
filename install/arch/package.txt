@@ -10,8 +10,8 @@ i3blocks
 ntfs-3g
 boost-libs
 libldap
-neofetch
 
+neofetch
 alsa-utils
 zsh
 gdb
