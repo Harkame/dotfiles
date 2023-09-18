@@ -32,10 +32,6 @@ arch-chroot /mnt bash -c '
 	echo "FONT=eurlatgr" >> /etc/vconsole.conf
 
 	echo "" >> /etc/pacman.conf
-	echo "[archlinuxfr]" >> /etc/pacman.conf
-	echo "SigLevel = Never" >> /etc/pacman.conf
-	echo "Server = http://repo.archlinux.fr/\$arch" >> /etc/pacman.conf
-	echo "" >> /etc/pacman.conf
 	echo "[blackarch]" >> /etc/pacman.conf
 	echo "SigLevel = Never" >> /etc/pacman.conf
 	echo "Server = http://blackarch.org/blackarch/\$repo/os/\$arch" >> /etc/pacman.conf
@@ -58,9 +54,9 @@ arch-chroot /mnt bash -c '
 
 	useradd -m -g users -G wheel -s /bin/bash harkame
 	echo -e "mypassword\nmypassword" | passwd harkame
+	usermod -aG sudo harkame
+	chown -R harkame /home/harkame
 '
-
-sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
 
 umount -R /mnt
 
