@@ -114,14 +114,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zshconfig="harkame ~/.zshrc"
 alias ohmyzsh="harkame ~/.oh-my-zsh"
-alias steam=LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' /usr/bin/steam
 alias clear="echo -e '\033c'";
 alias go="urxvt --hold -e";
 alias rekt="shutdown 0"
-alias cw="cd /home/harkame/workspace";
-alias ct="cd /home/harkame/Téléchargements";
-alias cc="cd /home/harkame/.config";
-alias vivaldi="vivaldi-stable --no-sandbox"
 
 clear;
 neofetch --memory_display infobar --disk_display infobar --ascii /home/harkame/.config/neofetch/pumpkin.sh;

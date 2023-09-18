@@ -21,3 +21,4 @@ btrfs-progs
 oh-my-zsh-git
 
 vscode
+github-cli
