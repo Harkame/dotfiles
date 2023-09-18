@@ -31,9 +31,3 @@ mount --make-rslave /mnt/gentoo/dev
 mount --bind /run /mnt/gentoo/run
 mount --make-slave /mnt/gentoo/run
 cp /etc/resolv.conf etc
-
-chroot . /bin/bash
-source /etc/profile
-
-emerge-webrsync
-emerge -avuDN @world
