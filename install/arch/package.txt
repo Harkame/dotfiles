@@ -1,5 +1,5 @@
 xorg-server
-xorg-xini
+xorg-xinit
 xorg-xmessage
 xorg-apps
 xorg-xrandr
@@ -7,7 +7,6 @@ rxvt-unicode
 i3
 i3-gaps
 i3blocks
-vivaldi
 flashplugin
 sunflower
 lxtask
@@ -27,5 +26,4 @@ btrfs-progs
 oh-my-zsh-git
 lm_sensors
 ttf-ms-fonts
-pycharm-community-edition
 neofetch
