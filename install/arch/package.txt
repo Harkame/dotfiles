@@ -20,5 +20,6 @@ gdb
 btrfs-progs
 oh-my-zsh-git
 
+google-chrome
 vscode
 github-cli
