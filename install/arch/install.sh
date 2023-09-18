@@ -54,7 +54,7 @@ arch-chroot /mnt bash -c '
 
 	useradd -m -g users -G wheel -s /bin/bash harkame
 	echo -e "mypassword\nmypassword" | passwd harkame
-	sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/g' /etc/sudoers
+	sed -i "s/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/g" /etc/sudoers
 	chown -R harkame /home/harkame
 '
 
