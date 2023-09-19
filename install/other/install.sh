@@ -1,3 +1,6 @@
+umount -R /mnt
+wipefs -af /dev/sda
+
 parted /dev/sda mklabel gpt
 parted -a optimal /dev/sda mkpart primary fat32 0% 1024MB
 parted -a optimal /dev/sda mkpart primary linux-swap 1024MB 5096MB
@@ -68,7 +71,7 @@ chroot . bash -c '
   emerge --ask sys-boot/grub
 
   grub-mkconfig -o /boot/grub/grub.cfg
-  grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB --recheck --no-nvram
+  grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB --recheck
 
   emerge net-misc/dhcpcd
   rc-update add dhcpcd default
