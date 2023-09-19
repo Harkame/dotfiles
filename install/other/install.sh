@@ -36,7 +36,7 @@ cp /etc/resolv.conf etc
 
 chroot . bash -c '
   emerge-webrsync
-  emerge -uDN @world
+  emerge -DN @world
 
   echo -e "mypassword\nmypassword" | passwd root
   useradd -m -g users -G wheel -s /bin/bash harkame
@@ -56,7 +56,7 @@ chroot . bash -c '
 
   echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" | tee -a /etc/portage/package.license
 
-  emerge sys-kernel/gentoo-sources sys-kernel/linux-firmware*
+  emerge sys-kernel/gentoo-sources sys-kernel/linux-firmware
   cd /usr/src/linux*
 
   emerge pciutils
