@@ -6,7 +6,7 @@ parted -a optimal /dev/sda mkpart primary fat32 0% 1024MB
 parted -a optimal /dev/sda mkpart primary linux-swap 1024MB 5096MB
 parted -a optimal /dev/sda mkpart primary btrfs 5096MB 100%
 
-echo -e "set 1 bios_grub on" | parted /dev/sda
+echo -e "set 1 esp on" | parted /dev/sda
 
 mkfs.fat -F 32 /dev/sda1
 
@@ -56,7 +56,7 @@ chroot . bash -c '
 
   emerge sys-kernel/installkernel-gentoo
 
-  emerge --ask sys-kernel/gentoo-kernel
+  emerge sys-kernel/gentoo-kernel-bin
 
   echo 'GRUB_PLATFORMS="efi-64"' >> /etc/portage/make.conf
   emerge sys-boot/grub

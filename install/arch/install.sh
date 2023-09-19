@@ -48,6 +48,7 @@ arch-chroot /mnt bash -c '
 	grub-mkconfig -o /boot/grub/grub.cfg
 	grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck
 
+	sed -i "s/^BINARIES=()/BINARIES=(setfont)/g" /etc/mkinicpio.conf
 	mkinitcpio -p linux
 
 	echo -e "mypassword\nmypassword" | passwd root
