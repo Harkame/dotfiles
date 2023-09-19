@@ -17,7 +17,6 @@ mkfs.btrfs -L "Gentoo" -f -n 65536 /dev/sda3
 
 mount --mkdir /dev/sda3 /mnt/gentoo
 mount --mkdir /dev/sda1 /mnt/gentoo/boot
-#mount --mkdir /dev/sda2 /mnt/gentoo/boot/efi
 
 cd /mnt/gentoo
 

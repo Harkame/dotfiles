@@ -7,6 +7,8 @@
 #### First boot
 
 ```shell
+pacman -Sy wget
+
 wget https://raw.githubusercontent.com/Harkame/dotfilesLinux/master/install/arch/install.sh
 
 chmod +x ./install.sh
