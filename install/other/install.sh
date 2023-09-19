@@ -20,9 +20,8 @@ cd /mnt/gentoo
 
 wget https://distfiles.gentoo.org/releases/amd64/autobuilds/20230917T164636Z/stage3-amd64-openrc-20230917T164636Z.tar.xz
 
-tar xpf stage
+tar xpf stage*
 
-cd /mnt/gentoo
 mount --types proc /proc /mnt/gentoo/proc
 mount --rbind /sys /mnt/gentoo/sys
 mount --make-rslave /mnt/gentoo/sys
@@ -31,3 +30,48 @@ mount --make-rslave /mnt/gentoo/dev
 mount --bind /run /mnt/gentoo/run
 mount --make-slave /mnt/gentoo/run
 cp /etc/resolv.conf etc
+
+chroot . bash -c '
+  emerge-webrsync
+  emerge -uDN @world
+
+  echo -e "mypassword\nmypassword" | passwd root
+  useradd -m -g users -G wheel -s /bin/bash harkame
+  echo -e "mypassword\nmypassword" | passwd harkame
+  sed -i "s/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/g" /etc/sudoers
+  chown -R harkame /home/harkame
+
+  sed -i "s/^keymap=\"us\"/keymap=\"fr\"/g"
+  rc-service keymaps restart
+  rc-update add keymaps boot
+
+  sed -i "s/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g" /etc/locale.gen
+  locale-gen
+
+  sed i "s/^hostname=\"localhost\"/hostname=\"skadi\"/g" /etc/conf.d/hostname
+  ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
+
+  echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" | tee -a /etc/portage/package.license
+
+  emerge sys-kernel/gentoo-sources sys-kernel/linux-firmware*
+  cd /usr/src/linux*
+
+  emerge pciutils
+
+  make localyesconfig
+  make -j2
+
+  make modules_install
+  make install
+
+  echo 'GRUB_PLATFORMS="efi-64"' >> /etc/portage/make.conf
+  emerge --ask sys-boot/grub
+
+  grub-mkconfig -o /boot/grub/grub.cfg
+  grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB --recheck --no-nvram
+
+  emerge net-misc/dhcpcd
+  rc-update add dhcpcd default
+  rc-service dhcpcd start
+'
+umount -R /mnt/gentoo
