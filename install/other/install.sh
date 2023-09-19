@@ -68,10 +68,10 @@ chroot . bash -c '
   make install
 
   echo 'GRUB_PLATFORMS="efi-64"' >> /etc/portage/make.conf
-  emerge --ask sys-boot/grub
+  emerge sys-boot/grub
 
   grub-mkconfig -o /boot/grub/grub.cfg
-  grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB --recheck
+  #grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB --recheck
 
   emerge net-misc/dhcpcd
   rc-update add dhcpcd default
