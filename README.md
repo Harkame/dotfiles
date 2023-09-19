@@ -25,17 +25,7 @@ git clone https://github.com/Harkame/dotfilesLinux.git
 
 cd dotfilesLinux/install/arch
 
-chmod +x ./end_install.sh
+chmod +x ./end_install.sh ./export.sh
 
 ./end_install.sh
-```
-
-#### Second log
-
-```shell
-cd dotfilesLinux/install/arch
-
-chmod +x ./export.sh
-
-./export.sh
 ```

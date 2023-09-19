@@ -20,4 +20,6 @@ git config --global color.branch auto
 git config --global user.name Harkame
 git config --global user.email louisr.daviaud@gmail.com
 
+./export.sh
+
 reboot
