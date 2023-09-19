@@ -19,6 +19,8 @@ chmod +x ./install.sh
 #### First log
 
 ```shell
+sudo pacman -Sy git
+
 git clone https://github.com/Harkame/dotfilesLinux.git
 
 cd dotfilesLinux/install/arch
@@ -26,6 +28,12 @@ cd dotfilesLinux/install/arch
 chmod +x ./end_install.sh
 
 ./end_install.sh
+```
+
+#### Second log
+
+```shell
+cd dotfilesLinux/install/arch
 
 chmod +x ./export.sh
 

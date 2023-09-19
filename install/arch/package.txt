@@ -23,7 +23,6 @@ nodejs
 python
 python-pip
 
-git
 feh
 google-chrome
 vscode
