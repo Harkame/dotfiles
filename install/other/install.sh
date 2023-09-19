@@ -1,5 +1,4 @@
-umount -R /mnt
-wipefs -af /dev/sda
+#!/bin/bash
 
 parted /dev/sda mklabel gpt
 parted -a optimal /dev/sda mkpart primary fat32 0% 1024MB
@@ -15,17 +14,17 @@ swapon /dev/sda2
 
 mkfs.btrfs -L "Gentoo" -f -n 65536 /dev/sda3
 
-mount --mkdir /dev/sda3 /mnt
-mount --mkdir /dev/sda1 /mnt/boot
+mount --mkdir /dev/sda3 /mnt/gentoo
+mount --mkdir /dev/sda1 /mnt/gentoo/boot
 
-cd /mnt
+cd /mnt/gentoo
 
 wget https://distfiles.gentoo.org/releases/amd64/autobuilds/20230917T164636Z/stage3-amd64-openrc-20230917T164636Z.tar.xz
 tar xpf stage*
 
-mount --rbind /dev /mnt/dev
-mount --rbind /proc /mnt/proc
-mount --rbind /sys /mnt/sys
+mount --rbind /dev /mnt/gentoo/dev
+mount --rbind /proc /mnt/gentoo/proc
+mount --rbind /sys /mnt/gentoo/sys
 
 cp /etc/resolv.conf etc
 

@@ -1,8 +1,5 @@
 #!/bin/bash
 
-umount -R /mnt
-wipefs -af /dev/sda
-
 parted /dev/sda mklabel gpt
 parted -a optimal /dev/sda mkpart primary fat32 0% 1024MB
 parted -a optimal /dev/sda mkpart primary linux-swap 1024MB 5096MB
@@ -17,7 +14,7 @@ swapon /dev/sda2
 
 mkfs.btrfs -L "Arch" -f -n 65536 /dev/sda3
 
-mount /dev/sda3 /mnt
+mount --mkdir /dev/sda3 /mnt
 mount --mkdir /dev/sda1 /mnt/boot
 
 pacstrap /mnt base base-devel grub btrfs-progs mkinitcpio linux linux-firmware efibootmgr nano
