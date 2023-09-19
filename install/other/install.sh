@@ -54,18 +54,9 @@ chroot . bash -c '
   sed i "s/^hostname=\"localhost\"/hostname=\"skadi\"/g" /etc/conf.d/hostname
   ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
-  echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" | tee -a /etc/portage/package.license
+  emerge sys-kernel/installkernel-gentoo
 
-  emerge sys-kernel/gentoo-sources sys-kernel/linux-firmware
-  cd /usr/src/linux*
-
-  emerge pciutils
-
-  make localyesconfig
-  make -j2
-
-  make modules_install
-  make install
+  emerge --ask sys-kernel/gentoo-kernel
 
   echo 'GRUB_PLATFORMS="efi-64"' >> /etc/portage/make.conf
   emerge sys-boot/grub
