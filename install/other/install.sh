@@ -64,4 +64,4 @@ chroot . bash -c '
   rc-update add dhcpcd default
   rc-service dhcpcd start
 '
-#umount -R /mnt/gentoo
+umount -R /mnt/gentoo
