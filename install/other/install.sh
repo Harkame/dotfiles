@@ -29,7 +29,7 @@ mount --rbind /sys /mnt/gentoo/sys
 cp /etc/resolv.conf etc
 
 chroot . bash -c '
-  mount /dev/sda3 /
+  #mount /dev/sda3 /
 
   emerge-webrsync
   emerge -DN @world
@@ -58,10 +58,12 @@ chroot . bash -c '
   emerge sys-boot/grub
 
   grub-mkconfig -o /boot/grub/grub.cfg
-  grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB --recheck
+  grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck
 
   emerge net-misc/dhcpcd
   rc-update add dhcpcd default
   rc-service dhcpcd start
 '
 umount -R /mnt/gentoo
+
+reboot

@@ -1,11 +1,17 @@
 #!/bin/bash
 
+is_uefi=false
+
 parted /dev/sda mklabel gpt
 parted -a optimal /dev/sda mkpart primary fat32 0% 1024MB
 parted -a optimal /dev/sda mkpart primary linux-swap 1024MB 5096MB
 parted -a optimal /dev/sda mkpart primary btrfs 5096MB 100%
 
-echo -e "set 1 esp on" | parted /dev/sda
+if [ -d "/sys/firmware/efi" ]
+	echo -e "set 1 esp on" | parted /dev/sda
+else
+	echo -e "set 1 bios_grub on" | parted /dev/sda
+fi
 
 mkfs.fat -F 32 /dev/sda1
 
@@ -17,7 +23,11 @@ mkfs.btrfs -L "Arch" -f -n 65536 /dev/sda3
 mount --mkdir /dev/sda3 /mnt
 mount --mkdir /dev/sda1 /mnt/boot
 
-pacstrap /mnt base base-devel grub btrfs-progs mkinitcpio linux linux-firmware efibootmgr nano
+pacstrap /mnt base base-devel grub btrfs-progs mkinitcpio linux linux-firmware nano wget
+
+if [ -d "/sys/firmware/efi" ]
+	pacstrap /mnt efibootmgr
+else
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
@@ -43,7 +53,12 @@ arch-chroot /mnt bash -c '
 
 	mkdir /boot/grub
 	grub-mkconfig -o /boot/grub/grub.cfg
-	grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck
+
+	if [ -d "/sys/firmware/efi" ]
+		grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck
+	else
+		grub-install --target=i386-pc --bootloader-id=GRUB --recheck /dev/sda1
+	fi
 
 	sed -i "s/^BINARIES=()/BINARIES=(setfont)/g" /etc/mkinicpio.conf
 	mkinitcpio -p linux
@@ -56,6 +71,8 @@ arch-chroot /mnt bash -c '
 	chown -R harkame /home/harkame
 '
 
-umount -R /mnt
+#umount -R /mnt
+
+#
 
 reboot
