@@ -1,6 +1,12 @@
 #!/bin/bash
 
-parted /dev/sda mklabel gpt
+if [ -d "/sys/firmware/efi" ]
+then
+	parted /dev/sda mklabel gpt
+else
+	parted /dev/sda mklabel msdos
+fi
+
 parted -a optimal /dev/sda mkpart primary fat32 0% 1024MB
 parted -a optimal /dev/sda mkpart primary linux-swap 1024MB 5096MB
 parted -a optimal /dev/sda mkpart primary btrfs 5096MB 100%
@@ -56,9 +62,9 @@ arch-chroot /mnt bash -c '
 
 	if [ -d "/sys/firmware/efi" ]
 	then
-		grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck
+		grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 	else
-		grub-install --no-floppy --recheck /dev/sda
+		grub-install --target=i386-pc /dev/sda
 	fi
 
 	sed -i "s/^BINARIES=()/BINARIES=(setfont)/g" /etc/mkinicpio.conf
