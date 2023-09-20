@@ -6,6 +6,7 @@ parted -a optimal /dev/sda mkpart primary linux-swap 1024MB 5096MB
 parted -a optimal /dev/sda mkpart primary btrfs 5096MB 100%
 
 if [ -d "/sys/firmware/efi" ]
+then
 	echo -e "set 1 esp on" | parted /dev/sda
 else
 	echo -e "set 1 bios_grub on" | parted /dev/sda
@@ -24,6 +25,7 @@ mount --mkdir /dev/sda1 /mnt/boot
 pacstrap /mnt base base-devel grub btrfs-progs mkinitcpio linux linux-firmware nano wget
 
 if [ -d "/sys/firmware/efi" ]
+then
 	pacstrap /mnt efibootmgr
 else
 
@@ -53,6 +55,7 @@ arch-chroot /mnt bash -c '
 	grub-mkconfig -o /boot/grub/grub.cfg
 
 	if [ -d "/sys/firmware/efi" ]
+	then
 		grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck
 	else
 		grub-install --target=i386-pc --bootloader-id=GRUB --recheck /dev/sda1
