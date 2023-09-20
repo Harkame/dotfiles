@@ -71,8 +71,6 @@ arch-chroot /mnt bash -c '
 	chown -R harkame /home/harkame
 '
 
-#umount -R /mnt
-
-#
+umount -R /mnt
 
 reboot
