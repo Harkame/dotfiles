@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sfdisk --delete /dev/sda
+wipefs -a /dev/sda
 
 if [ -d "/sys/firmware/efi" ]
 then
