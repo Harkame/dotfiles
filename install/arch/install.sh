@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sfdisk --delete /dev/sda
+
 if [ -d "/sys/firmware/efi" ]
 then
 	parted /dev/sda mklabel gpt
@@ -23,7 +25,7 @@ mkfs.fat -F 32 /dev/sda1
 mkswap /dev/sda2
 swapon /dev/sda2
 
-mkfs.btrfs -L "Arch" -f -n 65536 /dev/sda3
+mkfs.btrfs -L "Arch" /dev/sda3
 
 mount --mkdir /dev/sda3 /mnt
 mount --mkdir /dev/sda1 /mnt/boot
