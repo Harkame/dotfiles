@@ -1,7 +1,5 @@
 #!/bin/bash
 
-is_uefi=false
-
 parted /dev/sda mklabel gpt
 parted -a optimal /dev/sda mkpart primary fat32 0% 1024MB
 parted -a optimal /dev/sda mkpart primary linux-swap 1024MB 5096MB
