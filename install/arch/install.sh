@@ -58,7 +58,7 @@ arch-chroot /mnt bash -c '
 	then
 		grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck
 	else
-		grub-install --target=i386-pc --bootloader-id=GRUB --recheck /boot
+		#grub-install --target=i386-pc --bootloader-id=GRUB --recheck /boot 
 	fi
 
 	sed -i "s/^BINARIES=()/BINARIES=(setfont)/g" /etc/mkinicpio.conf
@@ -72,6 +72,6 @@ arch-chroot /mnt bash -c '
 	chown -R harkame /home/harkame
 '
 
-umount -R /mnt
+#umount -R /mnt
 
-reboot
+#reboot
