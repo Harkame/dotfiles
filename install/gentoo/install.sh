@@ -34,7 +34,7 @@ if [ -d "/sys/firmware/efi" ]
 then
   mount --mkdir /dev/sda1 /efi
 else
-  mount --mkdir /dev/sda1 /boot
+  mount --mkdir /dev/sda1 /mnt/gentoo/boot
 fi
 
 
