@@ -57,6 +57,8 @@ chroot . bash -c '
   emerge-webrsync
   emerge -DN @world
 
+  emerge sys-kernel/installkernel-gentoo sys-kernel/gentoo-kernel-bin sudo sys-fs/genfstab sys-boot/grub net-misc/dhcpcd
+
   echo -e "mypassword\nmypassword" | passwd root
   useradd -m -g users -G wheel -s /bin/bash harkame
   echo -e "mypassword\nmypassword" | passwd harkame
@@ -73,18 +75,11 @@ chroot . bash -c '
   sed i "s/^hostname=\"localhost\"/hostname=\"skadi\"/g" /etc/conf.d/hostname
   ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
-  emerge sys-kernel/installkernel-gentoo
-
-  emerge sys-kernel/gentoo-kernel-bin
-
 	if [ -d "/sys/firmware/efi" ]
 	then
 	  echo 'GRUB_PLATFORMS="efi-64"' >> /etc/portage/make.conf
   fi
 
-  emerge sys-boot/grub
-
-  emerge sys-fs/genfstab
   genfstab -U / >> /etc/fstab
 
 	if [ -d "/sys/firmware/efi" ]
@@ -96,7 +91,6 @@ chroot . bash -c '
 
   grub-mkconfig -o /boot/grub/grub.cfg
 
-  emerge net-misc/dhcpcd
   rc-update add dhcpcd default
   rc-service dhcpcd start
 '
