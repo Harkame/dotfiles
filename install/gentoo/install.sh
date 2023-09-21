@@ -81,22 +81,22 @@ chroot . bash -c '
   echo 'GRUB_PLATFORMS="efi-64"' >> /etc/portage/make.conf
   emerge sys-boot/grub
 
-  grub-mkconfig -o /boot/grub/grub.cfg
+  #grub-mkconfig -o /boot/grub/grub.cfg
 
-	if [ -d "/sys/firmware/efi" ]
-	then
-	  grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
-	else
-	  grub-install --target=i386-pc /dev/sda
-	fi
+	#if [ -d "/sys/firmware/efi" ]
+	#then
+	#  grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+	#else
+	#  grub-install --target=i386-pc /dev/sda
+	#fi
 
   #emerge net-misc/dhcpcd
   #rc-update add dhcpcd default
   #rc-service dhcpcd start
 '
 
-cd
-umount -l /mnt/gentoo/dev{/shm,/pts,}
-umount -R /mnt/gentoo
+#cd
+#umount -l /mnt/gentoo/dev{/shm,/pts,}
+#umount -R /mnt/gentoo
 
 #reboot
