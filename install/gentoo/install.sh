@@ -32,14 +32,10 @@ mount --mkdir /dev/sda3 /mnt/gentoo
 
 if [ -d "/sys/firmware/efi" ]
 then
-  mount --mkdir /dev/sda1 /efi
+  mount --mkdir /dev/sda1 /mnt/gentoo/efi
 else
   mount --mkdir /dev/sda1 /mnt/gentoo/boot
 fi
-
-
-
-cd /mnt/gentoo
 
 wget https://distfiles.gentoo.org/releases/amd64/autobuilds/20230917T164636Z/stage3-amd64-openrc-20230917T164636Z.tar.xz
 tar xpf stage*
@@ -52,7 +48,9 @@ mount --make-rslave /mnt/gentoo/dev
 mount --bind /run /mnt/gentoo/run
 mount --make-slave /mnt/gentoo/run
 
-cp /etc/resolv.conf etc
+cd /mnt/gentoo
+
+cp /etc/resolv.conf etc/
 
 chroot . bash -c '
   emerge-webrsync
