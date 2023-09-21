@@ -29,22 +29,32 @@ swapon /dev/sda2
 mkfs.btrfs -L "Gentoo" -f -n 65536 /dev/sda3
 
 mount --mkdir /dev/sda3 /mnt/gentoo
-mount --mkdir /dev/sda1 /mnt/gentoo/boot
+
+if [ -d "/sys/firmware/efi" ]
+then
+  mount --mkdir /dev/sda1 /efi
+else
+  mount --mkdir /dev/sda1 /boot
+fi
+
+
 
 cd /mnt/gentoo
 
 wget https://distfiles.gentoo.org/releases/amd64/autobuilds/20230917T164636Z/stage3-amd64-openrc-20230917T164636Z.tar.xz
 tar xpf stage*
 
-mount --rbind /dev /mnt/gentoo/dev
-mount --rbind /proc /mnt/gentoo/proc
+mount --types proc /proc /mnt/gentoo/proc
 mount --rbind /sys /mnt/gentoo/sys
+mount --make-rslave /mnt/gentoo/sys
+mount --rbind /dev /mnt/gentoo/dev
+mount --make-rslave /mnt/gentoo/dev
+mount --bind /run /mnt/gentoo/run
+mount --make-slave /mnt/gentoo/run
 
 cp /etc/resolv.conf etc
 
 chroot . bash -c '
-  #mount /dev/sda3 /
-
   emerge-webrsync
   emerge -DN @world
 
@@ -75,15 +85,18 @@ chroot . bash -c '
 
 	if [ -d "/sys/firmware/efi" ]
 	then
-		grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+	  grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 	else
-		grub-install --target=i386-pc /dev/sda
+	  grub-install --target=i386-pc /dev/sda
 	fi
 
-  emerge net-misc/dhcpcd
-  rc-update add dhcpcd default
-  rc-service dhcpcd start
+  #emerge net-misc/dhcpcd
+  #rc-update add dhcpcd default
+  #rc-service dhcpcd start
 '
+
+cd
+umount -l /mnt/gentoo/dev{/shm,/pts,}
 umount -R /mnt/gentoo
 
-reboot
+#reboot
