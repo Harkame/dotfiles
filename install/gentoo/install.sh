@@ -48,9 +48,9 @@ mount --make-rslave /mnt/gentoo/dev
 mount --bind /run /mnt/gentoo/run
 mount --make-slave /mnt/gentoo/run
 
+mkdir /mnt/gentoo/etc
+cp /etc/resolv.conf /mnt/gentoo/etc/
 cd /mnt/gentoo
-
-cp /etc/resolv.conf etc/
 
 chroot . bash -c '
   emerge-webrsync
