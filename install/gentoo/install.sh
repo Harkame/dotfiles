@@ -63,7 +63,7 @@ chroot . bash -c '
   sed -i "s/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/g" /etc/sudoers
   chown -R harkame /home/harkame
 
-  sed -i "s/^keymap=\"us\"/keymap=\"fr\"/g"
+  sed -i "s/^keymap=\"us\"/keymap=\"fr\"/g" /etc/conf.d/keymaps
   rc-service keymaps restart
   rc-update add keymaps boot
 
@@ -84,7 +84,7 @@ chroot . bash -c '
 
   emerge sys-boot/grub
 
-  emerge fs-sys/genfstab
+  emerge sys-fs/genfstab
   genfstab -U / >> /etc/fstab
 
 	#if [ -d "/sys/firmware/efi" ]
