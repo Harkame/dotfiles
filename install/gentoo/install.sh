@@ -77,10 +77,15 @@ chroot . bash -c '
 
   emerge sys-kernel/gentoo-kernel-bin
 
-  echo 'GRUB_PLATFORMS="efi-64"' >> /etc/portage/make.conf
+	if [ -d "/sys/firmware/efi" ]
+	then
+	  echo 'GRUB_PLATFORMS="efi-64"' >> /etc/portage/make.conf
+  fi
+
   emerge sys-boot/grub
 
-  #grub-mkconfig -o /boot/grub/grub.cfg
+  emerge fs-sys/genfstab
+  genfstab -U / >> /etc/fstab
 
 	#if [ -d "/sys/firmware/efi" ]
 	#then
@@ -89,13 +94,14 @@ chroot . bash -c '
 	#  grub-install --target=i386-pc /dev/sda
 	#fi
 
+  #grub-mkconfig -o /boot/grub/grub.cfg
+
   #emerge net-misc/dhcpcd
   #rc-update add dhcpcd default
   #rc-service dhcpcd start
 '
 
 #cd
-#umount -l /mnt/gentoo/dev{/shm,/pts,}
 #umount -R /mnt/gentoo
 
 #reboot

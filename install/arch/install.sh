@@ -60,7 +60,6 @@ arch-chroot /mnt bash -c '
 
 	echo "Skadi" >> /etc/hostname
 
-	mkdir /boot/grub
 	grub-mkconfig -o /boot/grub/grub.cfg
 
 	if [ -d "/sys/firmware/efi" ]
