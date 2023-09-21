@@ -87,21 +87,21 @@ chroot . bash -c '
   emerge sys-fs/genfstab
   genfstab -U / >> /etc/fstab
 
-	#if [ -d "/sys/firmware/efi" ]
-	#then
-	#  grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
-	#else
-	#  grub-install --target=i386-pc /dev/sda
-	#fi
+	if [ -d "/sys/firmware/efi" ]
+	then
+	  grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+	else
+	  grub-install --target=i386-pc /dev/sda
+	fi
 
-  #grub-mkconfig -o /boot/grub/grub.cfg
+  grub-mkconfig -o /boot/grub/grub.cfg
 
-  #emerge net-misc/dhcpcd
-  #rc-update add dhcpcd default
-  #rc-service dhcpcd start
+  emerge net-misc/dhcpcd
+  rc-update add dhcpcd default
+  rc-service dhcpcd start
 '
 
-#cd
-#umount -R /mnt/gentoo
+cd
+umount -R /mnt/gentoo
 
-#reboot
+reboot
