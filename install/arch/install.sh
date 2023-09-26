@@ -31,7 +31,7 @@ mkfs.btrfs -L "Arch" /dev/sda3
 mount --mkdir /dev/sda3 /mnt
 mount --mkdir /dev/sda1 /mnt/boot
 
-pacstrap /mnt base base-devel grub btrfs-progs mkinitcpio linux linux-firmware nano wget
+pacstrap /mnt base base-devel grub btrfs-progs mkinitcpio mkinitcpio-numlock linux linux-firmware nano wget
 
 if [ -d "/sys/firmware/efi" ]
 then
