@@ -3,6 +3,7 @@ xorg-xinit
 xorg-xmessage
 xorg-apps
 xorg-xrandr
+numlockx
 rxvt-unicode
 i3
 i3-gaps

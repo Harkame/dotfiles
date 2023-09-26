@@ -2,6 +2,6 @@
 
 setxkbmap fr
 
-dhcppd
+numlockx &
 
 exec i3
