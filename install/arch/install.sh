@@ -66,7 +66,7 @@ arch-chroot /mnt bash -c '
 
 	if [ -d "/sys/firmware/efi" ]
 	then
-		grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+		grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB
 	else
 		grub-install --target=i386-pc /dev/sda
 	fi
