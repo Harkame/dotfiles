@@ -31,7 +31,7 @@ mkfs.btrfs -L "Arch" /dev/sda3
 mount --mkdir /dev/sda3 /mnt
 mount --mkdir /dev/sda1 /mnt/boot
 
-pacman -Sy archlinux-keyring
+pacman -Sy --noconfirm archlinux-keyring
 
 pacstrap /mnt base base-devel grub btrfs-progs mkinitcpio linux linux-firmware nano wget
 
