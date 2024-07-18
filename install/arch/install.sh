@@ -11,8 +11,8 @@ else
 fi
 
 parted -a optimal /dev/sda mkpart primary fat32 0% 1024MB
-parted -a optimal /dev/sda mkpart primary linux-swap 1024MB 5096MB
-parted -a optimal /dev/sda mkpart primary btrfs 5096MB 100%
+parted -a optimal /dev/sda mkpart primary linux-swap 1024MB 4096MB
+parted -a optimal /dev/sda mkpart primary btrfs 4096MB 100%
 
 if [ -d "/sys/firmware/efi" ]
 then
@@ -62,14 +62,14 @@ arch-chroot /mnt bash -c '
 
 	echo "Skadi" >> /etc/hostname
 
-	grub-mkconfig -o /boot/grub/grub.cfg
-
 	if [ -d "/sys/firmware/efi" ]
 	then
 		grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB
 	else
-		grub-install --target=i386-pc /dev/sda
+		grub-install --target=i386-pc --boot-directory=/mnt
 	fi
+
+	grub-mkconfig -o /boot/grub/grub.cfg
 
 	sed -i "s/^BINARIES=()/BINARIES=(setfont)/g" /etc/mkinicpio.conf
 	mkinitcpio -p linux
