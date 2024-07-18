@@ -11,8 +11,8 @@ else
 fi
 
 parted -a optimal /dev/sda mkpart primary fat32 0% 1024MB
-parted -a optimal /dev/sda mkpart primary linux-swap 1024MB 4096MB
-parted -a optimal /dev/sda mkpart primary btrfs 4096MB 100%
+parted -a optimal /dev/sda mkpart primary linux-swap 1024MB 5096MB
+parted -a optimal /dev/sda mkpart primary btrfs 5096MB 100%
 
 if [ -d "/sys/firmware/efi" ]
 then

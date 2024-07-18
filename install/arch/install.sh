@@ -10,26 +10,52 @@ else
 	parted /dev/sda mklabel msdos
 fi
 
-parted -a optimal /dev/sda mkpart primary fat32 0% 1024MB
-parted -a optimal /dev/sda mkpart primary linux-swap 1024MB 4096MB
-parted -a optimal /dev/sda mkpart primary btrfs 4096MB 100%
+if [ -d "/sys/firmware/efi" ]
+then
+	parted -a optimal /dev/sda mkpart primary fat32 0% 1024MB
+	parted -a optimal /dev/sda mkpart primary linux-swap 1024MB 5096MB
+	parted -a optimal /dev/sda mkpart primary btrfs 5096MB 100%
+else
+	parted -a optimal /dev/sda mkpart primary linux-swap 0% 4096MB
+	parted -a optimal /dev/sda mkpart primary btrfs 4096MB 100%
+fi
 
 if [ -d "/sys/firmware/efi" ]
 then
 	echo -e "set 1 esp on" | parted /dev/sda
 else
-	echo -e "set 1 bios_grub on" | parted /dev/sda
+	echo -e "set 2 boot on" | parted /dev/sda
+	echo -e "set 2 bios_grub on" | parted /dev/sda
 fi
 
-mkfs.fat -F 32 /dev/sda1
+if [ -d "/sys/firmware/efi" ]
+then
+	mkfs.fat -F 32 /dev/sda1
+fi
 
-mkswap /dev/sda2
-swapon /dev/sda2
+if [ -d "/sys/firmware/efi" ]
+then
+	mkswap /dev/sda2
+	swapon /dev/sda2
+else
+	mkswap /dev/sda1
+	swapon /dev/sda1
+fi
 
-mkfs.btrfs -L "Arch" /dev/sda3
+if [ -d "/sys/firmware/efi" ]
+then
+	mkfs.btrfs -L "Arch" /dev/sda3
+else
+	mkfs.btrfs /dev/sda2
+fi
 
-mount --mkdir /dev/sda3 /mnt
-mount --mkdir /dev/sda1 /mnt/boot
+if [ -d "/sys/firmware/efi" ]
+then
+	mount --mkdir /dev/sda3 /mnt
+	mount --mkdir /dev/sda1 /mnt/boot
+else
+	mount --mkdir /dev/sda2 /mnt
+fi
 
 pacman -Sy --noconfirm archlinux-keyring
 
@@ -66,7 +92,7 @@ arch-chroot /mnt bash -c '
 	then
 		grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB
 	else
-		grub-install --target=i386-pc --boot-directory=/mnt
+	  grub-install --target=i386-pc /dev/sda
 	fi
 
 	grub-mkconfig -o /boot/grub/grub.cfg
