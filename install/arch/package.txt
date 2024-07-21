@@ -12,7 +12,7 @@ ntfs-3g
 boost-libs
 libldap
 
-neofetch
+fastfetch
 alsa-utils
 zsh
 gdb
@@ -23,9 +23,10 @@ pcspkr
 nodejs
 python
 python-pip
+npm
 
 feh
-google-chrome
+chromium
 vscode
 github-cli
 lxappearance
