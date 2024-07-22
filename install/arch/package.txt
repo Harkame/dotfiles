@@ -11,6 +11,7 @@ i3blocks
 ntfs-3g
 boost-libs
 libldap
+iw
 
 fastfetch
 alsa-utils
@@ -19,6 +20,8 @@ gdb
 btrfs-progs
 oh-my-zsh-git
 pcspkr
+openssh
+inetutils
 
 nodejs
 python
@@ -30,3 +33,7 @@ chromium
 vscode
 github-cli
 lxappearance
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+noto-fonts-extra

@@ -22,4 +22,8 @@ git config --global user.email louisr.daviaud@gmail.com
 
 ./export.sh
 
+git clone https://github.com/vivien/i3blocks-contrib ~/workspace/
+ln -s ~workspace/i3blocks-contib/volume/volume ~/scripts/volume
+ln -s ~workspace/i3blocks-contrib/battery/battery ~/scripts/battery
+
 reboot
