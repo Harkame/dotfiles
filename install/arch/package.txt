@@ -12,6 +12,7 @@ ntfs-3g
 boost-libs
 libldap
 iw
+acpi
 
 fastfetch
 alsa-utils

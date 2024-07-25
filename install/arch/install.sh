@@ -98,6 +98,7 @@ arch-chroot /mnt bash -c '
 	grub-mkconfig -o /boot/grub/grub.cfg
 
 	sed -i "s/^BINARIES=()/BINARIES=(setfont)/g" /etc/mkinicpio.conf
+	sed -i "s/^#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g" /etc/systemd/logind.conf
 	mkinitcpio -p linux
 
 	echo -e "mypassword\nmypassword" | passwd root
