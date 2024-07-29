@@ -9,5 +9,5 @@ cp -Rf ~/.oh-my-zsh/ ../../dotfiles/
 cp -Rf ~/ascii/ ../../dotfiles/
 
 cp -f ~/.Xdefaults ../../dotfiles/
-cp -Rf ~/.xinitrc ../../dotfiles/.xinitrc
+cp -f ~/.xinitrc ../../dotfiles/.xinitrc
 cp -f ~/.zshrc ../../dotfiles/
