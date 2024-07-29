@@ -1,62 +1,33 @@
 separator_block_width=30
 
-[Weather]
-command=~/.i3/IconicWeather.sh "10001"
-interval=1800
-color=#e97ac8
-
-[disk-home]
-label=:
-command=/usr/lib/i3blocks/disk $HOME
-interval=30
-color=#859900
-
 [ssid]
-label=
-command=echo "$(iw dev wlo1 link | grep SSID | cut -d " " -f 2-)"
-color=#d33682
+label=🌐 
+command=echo "$(iw dev wlp2s0 link | grep SSID | cut -d " " -f 2-)"
 interval=5
 
-[wireless]
-instance=wlo1
-command=/usr/lib/i3blocks/iface
-color=#00FF00
-interval=10
+[bandwidth]
+command=~/scripts/bandwidth2
+interval=persist
+markup=pango
+LABEL=⬇️⬆️ 
 
-[strength]
-command=echo "$(iw dev wlo1 link | grep signal | cut -d " " -f 2-)"
-interval=10
-color=#cb4b16
-
-[temp]
-label=
-command=echo "$(sensors coretemp-isa-0000 | awk '/Physical/ {print $4}')"
-interval=10
-color=#b58900
+[memory]
+command=~/scripts/memory
+label=💾 
+interval=30
 
 [battery]
-
-command=~/.i3/battery BAT0
-
+command=~/scripts/battery
 interval=30
-
-[load]
-label=
-command=/usr/lib/i3blocks/load_average
-interval=10
-color=#6c71c4
-
+label=⚡ 
 
 [volume]
-label=
-command=/usr/lib/i3blocks/volume
-interval=2
+command=~/scripts/volume
+label=🔊 
+interval=5
 signal=10
-color=#d70a53
-
 
 [time]
-label=
-command=date '+%a %m-%d-%y %l:%M:%S %p'
+label=🕒 
+command=date '+%a %m-%d-%Y %H:%M:%S '
 interval=5
-color=#50C878

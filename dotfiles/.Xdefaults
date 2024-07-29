@@ -4,7 +4,7 @@ URxvt.boldfont:xft:Monospace-Bold:pixelsize=15
 
 URxvt*background: #000000
 
-URxvt*foreground: #D05FEC
+URxvt*foreground: #f69b3b
 
 URxvt.perl-ext-common:  default,matcher
 URxvt.urlLauncher:      firefox

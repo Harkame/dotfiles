@@ -108,11 +108,8 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="~/.local/bin/:$PATH"
 
-alias clear="echo -e '\033c'";
+alias clear="echo -e '\033c'"
 alias rekt="shutdown 0"
 
-clear;
-neofetch --memory_display infobar --disk_display infobar --ascii /home/harkame/.config/neofetch/pumpkin.sh;
-echo '';
-ls;
-echo '';
+clear
+fastfetch -l ~/ascii/pumkin.sh

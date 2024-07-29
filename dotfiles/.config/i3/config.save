@@ -19,11 +19,6 @@ bindsym Mod4+2 workspace 2
 bindsym Mod4+3 workspace 3
 bindsym Mod4+4 workspace 4
 bindsym Mod4+5 workspace 5
-bindsym Mod4+6 workspace 6
-bindsym Mod4+7 workspace 7
-bindsym Mod4+8 workspace 8
-bindsym Mod4+9 workspace 9
-bindsym Mod4+0 workspace 10
 
 bindsym Mod4+shift+1 move container to workspace 1
 bindsym Mod4+shift+2 move container to workspace 2
@@ -37,9 +32,9 @@ bindsym Mod4+shift+9 move container to workspace 9
 bindsym Mod4+shift+0 move container to workspace 10
 
 bindsym Mod4+shift+r restart
-bindsym Mod4+shift+p exec i3-msg exit
 
-bindsym Mod4+t exec urxvtc
+#bindsym control+shift+p exec "i3-anagbar -t warning -m 'Exit ?' -b 'Yes' 'i3-msg exit'"
+bindsym Mod4+shift+p exec "i3-nagbar"
 
 bar {
 	status_command i3blocks
@@ -54,9 +49,10 @@ bar {
 		statusline #ffffff
 		separator #757575
 		focused_workspace  #ffffff #285577
-		active_workspace   #ffffff #000000
-		inactive_workspace #888888 #222222
-		urgent_workspace   #ffffff #900000
+        	focused_workspace  #ffffff #000000
+        	active_workspace   #ffffff #000000
+        	inactive_workspace #888888 #222222
+        	urgent_workspace   #ffffff #900000
 	}
 }
 
@@ -68,18 +64,25 @@ new_window none
 
 new_float normal
 
-# class			border	background	text	indicator
-client.focused 	a#FF00FF	#111111		#00FF00	#FF00FF
+# Modification des couleurs de la fenêtre ayant le focus:
+# class	       	   bordure	fond	texte	indicateur
+client.focused	   #FF00FF	#111111	#00FF00	#FF00FF
 
-gaps inner 5
-gaps outer 5
-smart_gaps on
-smart_borders on
+bindsym Mod4+t exec urxvtc
+
+###########
+#  START  #
+###########
 
 #exec xrandr --newmode "1366x768_60.00"  312."25  2560 2752 3024 3488  1440 1443 1448 1493 -hsync +vsync; xrandr --addmode Virtual-1 2560x1440_60.00; xrandr --output Virtual-1 --mode 2560x1440_60.00;
 exec --no-startup-id urxvtd -q -o -f
 exec --no-startup-id feh --bg-scale ~/wallpapers/wallpaper.jpg
 
 for_window [class="^.*"] border pixel 1
+
+gaps inner 5
+gaps outer 5
+smart_gaps on
+smart_borders on
 
 exec urxvtc
